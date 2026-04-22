@@ -117,6 +117,28 @@
       </div>
     </section>
 
+    <!-- Tech Stack Preview -->
+    <section class="py-10 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
+      <div class="section-container text-center">
+        <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-6">Tech Stack yang sering digunakan</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span
+            v-for="tech in allSkills"
+            :key="tech.name"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-700 transition-all cursor-default"
+          >
+            <fa :icon="tech.icon" class="text-sm" />
+            <span class="text-sm font-medium">{{ tech.name }}</span>
+          </span>
+        </div>
+        <div class="mt-8">
+          <NuxtLink to="/skill-saya" class="text-primary-600 dark:text-primary-400 text-sm font-medium hover:underline">
+            Lihat semua skill &rarr;
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
     <!-- Services Preview -->
     <section class="py-20 bg-white dark:bg-gray-950">
       <div class="section-container">
@@ -152,8 +174,61 @@
       </div>
     </section>
 
-    <!-- Featured Portfolio -->
+    <!-- Latest Experience -->
     <section class="py-20 bg-gray-50 dark:bg-gray-900">
+      <div class="section-container">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-950 text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+            <fa icon="fa-solid fa-briefcase" />
+            Perjalanan Karir
+          </div>
+          <h2 class="section-title">Pengalaman Kerja</h2>
+          <p class="section-subtitle">Pengalaman profesional terbaru saya</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto relative">
+          <div class="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-primary-300 to-transparent hidden sm:block" />
+          <div class="space-y-6">
+            <div
+              v-for="exp in latestExperience"
+              :key="exp.id"
+              class="relative sm:pl-20"
+            >
+              <div class="hidden sm:flex absolute left-0 top-6 w-12 h-12 rounded-full flex-shrink-0 items-center justify-center text-white shadow-lg"
+                :class="exp.is_current ? 'bg-primary-600 shadow-primary-200 dark:shadow-primary-900' : 'bg-gray-400 dark:bg-gray-600'"
+              >
+                <fa :icon="exp.company_logo" />
+              </div>
+              <div class="card">
+                <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                      {{ exp.role }}
+                      <span v-if="exp.is_current" class="badge bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300 text-[10px] px-2 py-0.5">Saat ini</span>
+                    </h3>
+                    <p class="text-primary-600 dark:text-primary-400 text-sm font-medium">{{ exp.company }}</p>
+                  </div>
+                  <span class="badge bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs flex-shrink-0">
+                    {{ exp.year_start }} – {{ exp.year_end }}
+                  </span>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">{{ exp.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <NuxtLink to="/riwayat-pekerjaan" class="btn-outline">
+            Lihat CV Lengkap
+            <fa icon="fa-solid fa-arrow-right" />
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Portfolio -->
+    <section class="py-20 bg-white dark:bg-gray-950">
       <div class="section-container">
         <div class="text-center mb-12">
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-950 text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
@@ -220,6 +295,55 @@
       </div>
     </section>
 
+    <!-- Latest Posts -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+      <div class="section-container">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-950 text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
+            <fa icon="fa-solid fa-pen-nib" />
+            Tulisan & Artikel
+          </div>
+          <h2 class="section-title">Artikel Terbaru</h2>
+          <p class="section-subtitle">Berbagi pengetahuan dan pengalaman</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <NuxtLink
+            v-for="post in latestPosts"
+            :key="post.id"
+            :to="`/posts/${post.slug}`"
+            class="card overflow-hidden p-0 group block hover:-translate-y-1"
+          >
+            <div class="h-40 bg-gradient-to-br relative flex items-center justify-center overflow-hidden"
+              :class="getCoverGradient(post.id)"
+            >
+              <fa icon="fa-solid fa-pen-nib" class="text-5xl text-white/20" />
+              <div class="absolute top-3 left-3">
+                <span class="badge bg-white/20 backdrop-blur-sm text-white text-xs">{{ post.category }}</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-2 text-xs text-gray-400 dark:text-gray-500">
+                <fa icon="fa-solid fa-calendar" />
+                {{ formatDate(post.published_at) }}
+              </div>
+              <h3 class="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                {{ post.title }}
+              </h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">{{ post.excerpt }}</p>
+            </div>
+          </NuxtLink>
+        </div>
+
+        <div class="text-center">
+          <NuxtLink to="/posts" class="btn-outline">
+            Baca Artikel Lainnya
+            <fa icon="fa-solid fa-arrow-right" />
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-primary-600 to-indigo-700 dark:from-primary-800 dark:to-indigo-900">
       <div class="section-container text-center text-white">
@@ -243,13 +367,43 @@
 const profile = useProfile()
 const services = useServices()
 const portfolio = usePortfolio()
+const skills = useSkills()
+const experience = useExperience()
+const posts = usePosts()
 
 const featuredPortfolio = computed(() => portfolio.filter((p: any) => p.featured).slice(0, 3))
+
+const allSkills = computed(() =>
+  skills.categories.flatMap((c: any) => c.skills).sort((a: any, b: any) => b.level - a.level).slice(0, 12)
+)
+
+const latestExperience = computed(() => [...experience].slice(0, 3))
+
+const latestPosts = computed(() => {
+  return [...posts].sort((a: any, b: any) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime()).slice(0, 3)
+})
 
 const avatarSrc = computed(() => profile.avatar_url || profile.avatar || '')
 const yearsOfExperience = computed(() => `${new Date().getFullYear() - profile.career_start_year}+`)
 
 const socialLinks = profile.social
+
+const gradients = [
+  'from-primary-400 to-indigo-600',
+  'from-emerald-400 to-teal-600',
+  'from-orange-400 to-rose-600',
+  'from-violet-400 to-purple-600',
+  'from-sky-400 to-blue-600',
+  'from-amber-400 to-orange-600',
+]
+
+function getCoverGradient(id: number) {
+  return gradients[(id - 1) % gradients.length]
+}
+
+function formatDate(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+}
 
 useSeoMeta({
   title: `${profile.name} - ${profile.tagline}`,
@@ -258,3 +412,12 @@ useSeoMeta({
   ogDescription: profile.bio,
 })
 </script>
+
+<style scoped>
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>
