@@ -18,7 +18,7 @@
         <!-- Desktop Nav -->
         <div class="hidden md:flex items-center gap-1">
           <NuxtLink
-            v-for="link in navLinks"
+            v-for="link in mainLinks"
             :key="link.to"
             :to="link.to"
             class="nav-link px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-sm"
@@ -26,6 +26,31 @@
           >
             {{ link.label }}
           </NuxtLink>
+
+          <!-- Dropdown Lainnya -->
+          <div v-if="moreLinks.length > 0" class="relative group">
+            <button
+              class="nav-link px-3 py-2 rounded-lg group-hover:bg-gray-100 dark:group-hover:bg-gray-800 text-sm flex items-center gap-1"
+              :class="{ 'active bg-primary-50 dark:bg-primary-950/50': moreLinks.some(link => $route.path === link.to) }"
+            >
+              Lainnya
+              <fa icon="fa-solid fa-chevron-down" class="text-[10px] opacity-70 transition-transform duration-200 group-hover:rotate-180" />
+            </button>
+            
+            <div class="absolute top-full right-0 pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top translate-y-2 group-hover:translate-y-0 z-50">
+              <div class="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 py-2">
+                <NuxtLink
+                  v-for="link in moreLinks"
+                  :key="link.to"
+                  :to="link.to"
+                  class="block px-4 py-2.5 text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  :class="{ 'font-medium text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20': $route.path === link.to }"
+                >
+                  {{ link.label }}
+                </NuxtLink>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Right Actions -->
@@ -107,14 +132,17 @@ const navLinks = [
   { to: '/', label: 'Beranda' },
   { to: '/tentang-saya', label: 'Tentang' },
   { to: '/layanan-saya', label: 'Layanan' },
+  { to: '/portfolio', label: 'Portfolio' },
   { to: '/skill-saya', label: 'Skill' },
   { to: '/pendidikan', label: 'Pendidikan' },
   { to: '/sertifikat', label: 'Sertifikat' },
-  { to: '/portfolio', label: 'Portfolio' },
   { to: '/riwayat-pekerjaan', label: 'Pengalaman' },
   { to: '/posts', label: 'Posts' },
   { to: '/hubungi-saya', label: 'Kontak' },
 ]
+
+const mainLinks = computed(() => navLinks.slice(0, 4))
+const moreLinks = computed(() => navLinks.slice(4))
 
 function toggleColorMode() {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
