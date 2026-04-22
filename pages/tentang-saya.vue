@@ -14,8 +14,16 @@
           <div class="flex justify-center">
             <div class="relative">
               <div class="w-64 h-64 rounded-3xl bg-gradient-to-br from-primary-400 to-indigo-600 p-1 shadow-2xl">
-                <div class="w-full h-full rounded-3xl bg-gradient-to-br from-primary-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
-                  <fa icon="fa-solid fa-user" class="text-8xl text-primary-400 dark:text-primary-500" />
+                <div class="w-full h-full rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+                  <img
+                    v-if="profile.avatar"
+                    :src="profile.avatar"
+                    :alt="profile.name"
+                    class="w-full h-full object-cover"
+                  />
+                  <div v-else class="w-full h-full flex items-center justify-center">
+                    <fa icon="fa-solid fa-user" class="text-8xl text-primary-400 dark:text-primary-500" />
+                  </div>
                 </div>
               </div>
               <!-- Info Cards -->
