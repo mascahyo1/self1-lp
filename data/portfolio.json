@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "E-Commerce Platform",
+    "category": "Web App",
+    "tags": ["Vue.js", "Laravel", "MySQL", "Tailwind"],
+    "description": "Platform e-commerce lengkap dengan fitur manajemen produk, keranjang belanja, pembayaran online, dan dashboard admin.",
+    "image": "/images/portfolio/ecommerce.jpg",
+    "url_live": "https://shop.example.com",
+    "url_github": "https://github.com/budisantoso/ecommerce",
+    "featured": true,
+    "year": "2024"
+  },
+  {
+    "id": 2,
+    "title": "Task Management App",
+    "category": "Web App",
+    "tags": ["Nuxt.js", "Node.js", "MongoDB", "Socket.io"],
+    "description": "Aplikasi manajemen tugas real-time dengan kolaborasi tim, drag-and-drop kanban board, dan notifikasi live.",
+    "image": "/images/portfolio/taskapp.jpg",
+    "url_live": "https://tasks.example.com",
+    "url_github": "https://github.com/budisantoso/task-app",
+    "featured": true,
+    "year": "2024"
+  },
+  {
+    "id": 3,
+    "title": "Sistem Informasi Klinik",
+    "category": "Web App",
+    "tags": ["Laravel", "MySQL", "Bootstrap", "REST API"],
+    "description": "Sistem informasi manajemen klinik mencakup pendaftaran pasien, rekam medis, jadwal dokter, dan laporan keuangan.",
+    "image": "/images/portfolio/clinic.jpg",
+    "url_live": null,
+    "url_github": "https://github.com/budisantoso/clinic-system",
+    "featured": false,
+    "year": "2023"
+  },
+  {
+    "id": 4,
+    "title": "Portfolio Blog",
+    "category": "Website",
+    "tags": ["Nuxt.js", "Nuxt Content", "Tailwind CSS"],
+    "description": "Blog personal dengan CMS berbasis Markdown, RSS feed, dark mode, dan skor Lighthouse 100%.",
+    "image": "/images/portfolio/blog.jpg",
+    "url_live": "https://blog.budi.dev",
+    "url_github": "https://github.com/budisantoso/blog",
+    "featured": false,
+    "year": "2023"
+  },
+  {
+    "id": 5,
+    "title": "Mobile Food Delivery",
+    "category": "Mobile App",
+    "tags": ["React Native", "Node.js", "Firebase", "Stripe"],
+    "description": "Aplikasi pesan antar makanan dengan tracking driver real-time, integrasi pembayaran, dan sistem rating.",
+    "image": "/images/portfolio/foodapp.jpg",
+    "url_live": "https://play.google.com",
+    "url_github": "https://github.com/budisantoso/food-app",
+    "featured": true,
+    "year": "2022"
+  },
+  {
+    "id": 6,
+    "title": "Dashboard Analytics",
+    "category": "Web App",
+    "tags": ["Vue.js", "Chart.js", "FastAPI", "PostgreSQL"],
+    "description": "Dashboard analitik bisnis dengan visualisasi data interaktif, laporan otomatis, dan export PDF/Excel.",
+    "image": "/images/portfolio/dashboard.jpg",
+    "url_live": null,
+    "url_github": "https://github.com/budisantoso/analytics-dashboard",
+    "featured": false,
+    "year": "2022"
+  }
+]

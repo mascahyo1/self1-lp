@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "icon": "fa-solid fa-code",
+    "title": "Web Development",
+    "description": "Membangun website dan aplikasi web modern yang responsif, cepat, dan mudah digunakan menggunakan teknologi terkini.",
+    "features": ["Frontend (Vue/React)", "Backend (Node/Laravel)", "REST API", "Database Design"]
+  },
+  {
+    "id": 2,
+    "icon": "fa-solid fa-mobile-screen",
+    "title": "Mobile App",
+    "description": "Pengembangan aplikasi mobile cross-platform yang berjalan mulus di iOS dan Android dengan satu kodebase.",
+    "features": ["React Native", "Flutter", "Progressive Web App", "App Store Deployment"]
+  },
+  {
+    "id": 3,
+    "icon": "fa-solid fa-palette",
+    "title": "UI/UX Design",
+    "description": "Merancang antarmuka pengguna yang intuitif dan menarik dengan fokus pada pengalaman pengguna yang optimal.",
+    "features": ["Figma Prototyping", "Design System", "User Research", "Wireframing"]
+  },
+  {
+    "id": 4,
+    "icon": "fa-solid fa-server",
+    "title": "DevOps & Cloud",
+    "description": "Setup dan manajemen infrastruktur cloud, CI/CD pipeline, dan deployment otomatis untuk aplikasi Anda.",
+    "features": ["AWS / GCP", "Docker & Kubernetes", "CI/CD Pipeline", "Server Management"]
+  }
+]

@@ -1,0 +1,31 @@
+buatkan landing page untuk diri sendiri untuk individu yang sederhana
+ada halaman 
+beranda
+tentang saya
+layanan saya
+skill saya
+pendidikan
+sertifikat
+portfolio
+riwayat pekerjaan
+hubungi saya
+
+semua data dinamis sederhana disimpan dalam format json
+agar mudah diubah2 seperti data identitas dan konten2nya
+
+menggunakan latest
+vue js
+nuxt js
+font awesome
+tailwind css
+flowbite mungkin
+
+
+harus
+responsif
+modern dan menarik
+spa
+tema ada light mode dan dark mode default mode tema web dari sistem os
+seo
+
+buatkan langsung repo githubnya setiap aksi sedikit langsung commit aja biar ndak hilang progressnya

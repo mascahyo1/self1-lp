@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "AWS Certified Solutions Architect",
+    "issuer": "Amazon Web Services",
+    "issuer_logo": "fa-brands fa-aws",
+    "date": "2023-08",
+    "credential_id": "AWS-SAA-123456",
+    "credential_url": "https://aws.amazon.com/certification/",
+    "tags": ["Cloud", "AWS", "Architecture"]
+  },
+  {
+    "id": 2,
+    "title": "Google Professional Cloud Developer",
+    "issuer": "Google Cloud",
+    "issuer_logo": "fa-brands fa-google",
+    "date": "2023-03",
+    "credential_id": "GCP-PCD-789012",
+    "credential_url": "https://cloud.google.com/certification",
+    "tags": ["Cloud", "GCP", "Development"]
+  },
+  {
+    "id": 3,
+    "title": "Meta Front-End Developer Professional",
+    "issuer": "Meta (Coursera)",
+    "issuer_logo": "fa-brands fa-meta",
+    "date": "2022-11",
+    "credential_id": "META-FED-345678",
+    "credential_url": "https://coursera.org",
+    "tags": ["Frontend", "React", "UI/UX"]
+  },
+  {
+    "id": 4,
+    "title": "Certified Kubernetes Administrator",
+    "issuer": "CNCF / Linux Foundation",
+    "issuer_logo": "fa-brands fa-linux",
+    "date": "2022-06",
+    "credential_id": "CKA-901234",
+    "credential_url": "https://www.cncf.io/certification/cka/",
+    "tags": ["DevOps", "Kubernetes", "Container"]
+  },
+  {
+    "id": 5,
+    "title": "Laravel Certified Developer",
+    "issuer": "Laravel",
+    "issuer_logo": "fa-solid fa-l",
+    "date": "2021-09",
+    "credential_id": "LAR-567890",
+    "credential_url": "https://laravel.com",
+    "tags": ["PHP", "Laravel", "Backend"]
+  },
+  {
+    "id": 6,
+    "title": "Responsive Web Design",
+    "issuer": "freeCodeCamp",
+    "issuer_logo": "fa-solid fa-code",
+    "date": "2020-04",
+    "credential_id": "FCC-RWD-112233",
+    "credential_url": "https://www.freecodecamp.org",
+    "tags": ["HTML", "CSS", "Responsive"]
+  }
+]

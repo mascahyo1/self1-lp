@@ -1,0 +1,23 @@
+{
+  "name": "Budi Santoso",
+  "tagline": "Full Stack Developer & UI/UX Enthusiast",
+  "bio": "Saya adalah seorang pengembang web yang passionate dengan pengalaman 5+ tahun membangun aplikasi modern. Saya percaya bahwa kode yang baik adalah kode yang bisa dipahami orang lain.",
+  "location": "Yogyakarta, Indonesia",
+  "email": "budi@example.com",
+  "phone": "+62 812 3456 7890",
+  "website": "https://budi.dev",
+  "avatar": "/images/avatar.jpg",
+  "resume": "/files/cv-budi-santoso.pdf",
+  "social": {
+    "github": "https://github.com/budisantoso",
+    "linkedin": "https://linkedin.com/in/budisantoso",
+    "twitter": "https://twitter.com/budisantoso",
+    "instagram": "https://instagram.com/budisantoso"
+  },
+  "stats": [
+    { "label": "Tahun Pengalaman", "value": "5+" },
+    { "label": "Proyek Selesai", "value": "50+" },
+    { "label": "Klien Puas", "value": "30+" },
+    { "label": "Teh Diminum", "value": "∞" }
+  ]
+}
