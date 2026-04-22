@@ -14,8 +14,10 @@
     "twitter": "https://twitter.com/budisantoso",
     "instagram": "https://instagram.com/budisantoso"
   },
+  "career_start_year": 2019,
+  "available_for_work": true,
   "stats": [
-    { "label": "Tahun Pengalaman", "value": "5+" },
+    { "label": "Tahun Pengalaman", "value": "auto", "key": "years_of_experience" },
     { "label": "Proyek Selesai", "value": "50+" },
     { "label": "Klien Puas", "value": "30+" },
     { "label": "Teh Diminum", "value": "∞" }

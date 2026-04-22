@@ -25,7 +25,10 @@
                   <span class="font-medium text-gray-700 dark:text-gray-300">{{ profile.location }}</span>
                 </div>
               </div>
-              <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-3 border border-gray-100 dark:border-gray-800">
+              <div
+                v-if="profile.available_for_work"
+                class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-3 border border-gray-100 dark:border-gray-800"
+              >
                 <div class="flex items-center gap-2 text-sm">
                   <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   <span class="font-medium text-gray-700 dark:text-gray-300">Open to work</span>

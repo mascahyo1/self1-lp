@@ -12,7 +12,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Left: Content -->
           <div class="animate-slide-up">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-950 text-primary-700 dark:text-primary-300 text-sm font-medium mb-6">
+            <div
+              v-if="profile.available_for_work"
+              class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-950 text-primary-700 dark:text-primary-300 text-sm font-medium mb-6"
+            >
               <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               Available for work
             </div>
@@ -77,7 +80,7 @@
               <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-3 border border-gray-100 dark:border-gray-800">
                 <div class="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                   <fa icon="fa-solid fa-code" class="text-primary-500" />
-                  <span>5+ Tahun</span>
+                  <span>{{ yearsOfExperience }} Tahun</span>
                 </div>
               </div>
             </div>
@@ -89,7 +92,9 @@
                 :key="stat.label"
                 class="card text-center"
               >
-                <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">{{ stat.value }}</div>
+                <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">
+                  {{ stat.key === 'years_of_experience' ? yearsOfExperience : stat.value }}
+                </div>
                 <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ stat.label }}</div>
               </div>
             </div>
@@ -232,6 +237,8 @@ const services = useServices()
 const portfolio = usePortfolio()
 
 const featuredPortfolio = computed(() => portfolio.filter((p: any) => p.featured).slice(0, 3))
+
+const yearsOfExperience = computed(() => `${new Date().getFullYear() - profile.career_start_year}+`)
 
 const socialLinks = {
   github: profile.social.github,
