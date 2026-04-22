@@ -10,15 +10,28 @@
   "avatar_url": "",
   "resume": "/files/cv-arif-cahyo.pdf",
   "career_start_year": 2019,
-  "available_for_work": false,
+  "available_for_work": true,
   "social": {
     "github": "https://github.com/mascahyo1",
     "linkedin": "https://www.linkedin.com/in/arif-cahyo-prasetyo-b7413a177/"
   },
   "stats": [
-    { "label": "Tahun Pengalaman", "value": "auto", "key": "years_of_experience" },
-    { "label": "Perusahaan", "value": "6+" },
-    { "label": "Proyek Selesai", "value": "20+" },
-    { "label": "Kopi Diminum", "value": "∞" }
+    {
+      "label": "Tahun Pengalaman",
+      "value": "auto",
+      "key": "years_of_experience"
+    },
+    {
+      "label": "Perusahaan",
+      "value": "6+"
+    },
+    {
+      "label": "Proyek Selesai",
+      "value": "20+"
+    },
+    {
+      "label": "Teknologi Dikuasai",
+      "value": "10+"
+    }
   ]
 }
