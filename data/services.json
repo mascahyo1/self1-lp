@@ -3,28 +3,28 @@
     "id": 1,
     "icon": "fa-solid fa-code",
     "title": "Web Development",
-    "description": "Membangun website dan aplikasi web modern yang responsif, cepat, dan mudah digunakan menggunakan teknologi terkini.",
-    "features": ["Frontend (Vue/React)", "Backend (Node/Laravel)", "REST API", "Database Design"]
+    "description": "Membangun aplikasi web full-stack yang responsif dan skalabel menggunakan PHP, Laravel, Vue.js, dan Nuxt.js sesuai kebutuhan bisnis.",
+    "features": ["Laravel / CodeIgniter Backend", "Vue.js / Nuxt.js Frontend", "REST API Development", "MySQL Database Design"]
   },
   {
     "id": 2,
-    "icon": "fa-solid fa-mobile-screen",
-    "title": "Mobile App",
-    "description": "Pengembangan aplikasi mobile cross-platform yang berjalan mulus di iOS dan Android dengan satu kodebase.",
-    "features": ["React Native", "Flutter", "Progressive Web App", "App Store Deployment"]
+    "icon": "fa-solid fa-boxes-stacked",
+    "title": "Pengembangan ERP / Sistem Internal",
+    "description": "Merancang dan membangun sistem ERP multi-modul atau aplikasi internal yang mengintegrasikan berbagai proses bisnis dalam satu platform.",
+    "features": ["Modul HR & Payroll", "Inventory Management", "CRM & Sales Module", "Dashboard & Reporting"]
   },
   {
     "id": 3,
-    "icon": "fa-solid fa-palette",
-    "title": "UI/UX Design",
-    "description": "Merancang antarmuka pengguna yang intuitif dan menarik dengan fokus pada pengalaman pengguna yang optimal.",
-    "features": ["Figma Prototyping", "Design System", "User Research", "Wireframing"]
+    "icon": "fa-solid fa-plug",
+    "title": "RESTful API & Integrasi",
+    "description": "Membangun dan mendokumentasikan RESTful API yang handal untuk kebutuhan mobile app, integrasi sistem pihak ketiga, atau microservice.",
+    "features": ["API Design & Development", "Third-party Integration", "Mobile App Backend", "Real-time Sync (PocketBase)"]
   },
   {
     "id": 4,
-    "icon": "fa-solid fa-server",
-    "title": "DevOps & Cloud",
-    "description": "Setup dan manajemen infrastruktur cloud, CI/CD pipeline, dan deployment otomatis untuk aplikasi Anda.",
-    "features": ["AWS / GCP", "Docker & Kubernetes", "CI/CD Pipeline", "Server Management"]
+    "icon": "fa-solid fa-sitemap",
+    "title": "IT Consulting & Technical Lead",
+    "description": "Membantu tim atau perusahaan dalam perencanaan teknologi, arsitektur sistem, code review, dan mentoring developer.",
+    "features": ["System Architecture Planning", "Tech Stack Evaluation", "Code Review & Mentoring", "IT Budget Planning"]
   }
 ]

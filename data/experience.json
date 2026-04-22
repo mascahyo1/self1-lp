@@ -1,79 +1,149 @@
 [
   {
     "id": 1,
-    "role": "Senior Full Stack Developer",
-    "company": "PT Digital Nusantara",
-    "company_logo": "fa-solid fa-building",
-    "location": "Jakarta (Remote)",
+    "role": "IT Lead",
+    "company": "PT Yulo (Yuk Laundry Online)",
+    "company_logo": "fa-solid fa-network-wired",
+    "location": "Remote",
     "employment_type": "Full-time",
-    "year_start": "2022",
+    "year_start": "Jan 2026",
     "year_end": "Sekarang",
     "is_current": true,
-    "description": "Memimpin tim pengembangan 4 orang dalam membangun produk SaaS B2B untuk manajemen SDM perusahaan. Bertanggung jawab atas arsitektur teknis, code review, dan mentoring junior developer.",
+    "description": "Memimpin perencanaan, pengembangan, dan implementasi sistem internal untuk mendukung kebutuhan operasional di berbagai divisi bisnis. Mengelola anggaran IT dan strategi teknologi perusahaan.",
     "responsibilities": [
-      "Merancang dan mengimplementasikan arsitektur microservices",
-      "Membangun dashboard analytics menggunakan Vue.js dan Chart.js",
-      "Mengintegrasikan payment gateway (Midtrans, Stripe)",
-      "Meningkatkan performa aplikasi hingga 60% lebih cepat",
-      "Memimpin sprint planning dan code review mingguan"
+      "Memimpin perencanaan dan implementasi sistem internal lintas divisi bisnis",
+      "Menganalisis kebutuhan departemen dan menghadirkan solusi teknologi sesuai tujuan bisnis",
+      "Merencanakan dan mengelola anggaran IT untuk pengembangan sistem dan infrastruktur",
+      "Mengawasi perbaikan sistem, pemeliharaan, dan optimasi performa",
+      "Mendesain dan memimpin pengembangan sistem serta fitur baru",
+      "Mengkoordinasikan tim pengembang agar proyek selesai tepat waktu dan sesuai standar",
+      "Mendefinisikan strategi teknologi, tools, dan best practices pengembangan dalam tim",
+      "Memantau performa, keamanan, dan stabilitas sistem perusahaan",
+      "Memberikan kepemimpinan teknis dan mentoring kepada developer",
+      "Memastikan inovasi berkelanjutan untuk meningkatkan efisiensi operasional"
     ],
-    "tech_stack": ["Vue.js", "Nuxt.js", "Node.js", "PostgreSQL", "Docker", "AWS"]
+    "tech_stack": ["Laravel", "Vue.js", "Nuxt.js", "PocketBase", "AWS S3", "MySQL"]
   },
   {
     "id": 2,
-    "role": "Full Stack Developer",
-    "company": "Startup Teknologi Kreatif",
-    "company_logo": "fa-solid fa-rocket",
-    "location": "Yogyakarta",
+    "role": "Web Developer",
+    "company": "PT Yulo (Yuk Laundry Online)",
+    "company_logo": "fa-solid fa-shirt",
+    "location": "Remote",
     "employment_type": "Full-time",
-    "year_start": "2020",
-    "year_end": "2022",
+    "year_start": "Okt 2023",
+    "year_end": "Nov 2025",
     "is_current": false,
-    "description": "Bergabung sebagai developer pertama di startup teknologi edutech. Membangun platform pembelajaran online dari nol hingga mencapai 10.000+ pengguna aktif.",
+    "description": "Membangun dan memelihara platform ERP internal multi-modul untuk perusahaan laundry online berskala nasional, mencakup HR, Inventory, Sales, CRM, CXM, dan Equity Management.",
     "responsibilities": [
-      "Membangun platform e-learning dari scratch menggunakan Laravel & Vue.js",
-      "Mengimplementasikan sistem live streaming kelas online",
-      "Mengembangkan REST API untuk aplikasi mobile",
-      "Setup infrastruktur di AWS (EC2, S3, CloudFront)",
-      "Optimasi database dan query performance"
+      "Mengembangkan dan memelihara modul HR (data karyawan, absensi, payroll, administrasi)",
+      "Membangun modul Inventory untuk manajemen stok, produk, gudang, dan pelaporan",
+      "Mengembangkan modul Sales untuk manajemen pesanan, harga, promosi, dan analitik penjualan",
+      "Membangun modul CRM untuk manajemen data dan interaksi pelanggan",
+      "Mengembangkan modul CXM untuk monitoring kepuasan dan kualitas layanan",
+      "Mengembangkan modul Equity/Shareholder Management untuk pencatatan kepemilikan saham",
+      "Mendesain dan mengembangkan RESTful API untuk Mobile App dan integrasi pihak ketiga",
+      "Membangun antarmuka web responsif menggunakan Vue.js dan Nuxt.js dengan backend Laravel",
+      "Mengimplementasikan sinkronisasi data real-time menggunakan PocketBase",
+      "Mengintegrasikan dan mengelola penyimpanan aset menggunakan AWS S3"
     ],
-    "tech_stack": ["Laravel", "Vue.js", "MySQL", "Redis", "AWS", "WebRTC"]
+    "tech_stack": ["Laravel", "Vue.js", "Nuxt.js", "PocketBase", "AWS S3", "MySQL", "REST API"]
   },
   {
     "id": 3,
-    "role": "Junior Web Developer",
-    "company": "CV Solusi Digital Mandiri",
-    "company_logo": "fa-solid fa-laptop-code",
+    "role": "Web Developer",
+    "company": "CitraWeb Digital Multisolusi",
+    "company_logo": "fa-solid fa-globe",
     "location": "Yogyakarta",
     "employment_type": "Full-time",
-    "year_start": "2019",
-    "year_end": "2020",
+    "year_start": "Okt 2022",
+    "year_end": "Jul 2023",
     "is_current": false,
-    "description": "Bekerja paruh waktu sambil kuliah sebagai pengembang web untuk berbagai klien UMKM dan startup lokal.",
+    "description": "Mengembangkan dan memelihara aplikasi web berbasis kebutuhan bisnis, serta berkolaborasi dengan tim untuk menghadirkan solusi web yang fungsional dan andal.",
     "responsibilities": [
-      "Membangun website company profile dan landing page",
-      "Mengembangkan sistem POS sederhana",
-      "Maintenance dan update website klien",
-      "Integrasi WhatsApp Business API"
+      "Mengembangkan aplikasi web dan fitur sistem berdasarkan kebutuhan bisnis",
+      "Memperbarui dan meningkatkan sistem yang ada agar tetap fungsional dan performan",
+      "Menambahkan fitur baru sesuai permintaan pengguna atau bisnis",
+      "Memperbaiki bug dan troubleshooting pada aplikasi web",
+      "Memelihara dan memastikan stabilitas sistem yang berjalan",
+      "Berkolaborasi dengan anggota tim untuk menghadirkan solusi web yang andal"
     ],
-    "tech_stack": ["PHP", "CodeIgniter", "MySQL", "Bootstrap", "jQuery"]
+    "tech_stack": ["PHP", "Laravel", "MySQL", "JavaScript"]
   },
   {
     "id": 4,
-    "role": "Web Developer Intern",
-    "company": "BPPT (Badan Pengkajian Teknologi)",
-    "company_logo": "fa-solid fa-flask",
-    "location": "Jakarta",
-    "employment_type": "Magang",
-    "year_start": "2019",
-    "year_end": "2019",
+    "role": "Web Developer",
+    "company": "Rumahweb.com",
+    "company_logo": "fa-solid fa-house-laptop",
+    "location": "Yogyakarta",
+    "employment_type": "Full-time",
+    "year_start": "Okt 2020",
+    "year_end": "Sep 2021",
     "is_current": false,
-    "description": "Magang selama 3 bulan dalam pengembangan sistem informasi internal lembaga.",
+    "description": "Mengembangkan aplikasi web berdasarkan kebutuhan bisnis dan pengguna, serta memastikan kestabilan dan performa sistem secara berkelanjutan.",
     "responsibilities": [
-      "Mengembangkan modul laporan keuangan",
-      "Dokumentasi API dan user manual",
-      "Pengujian dan QA sistem"
+      "Mengembangkan aplikasi web berdasarkan kebutuhan bisnis dan pengguna",
+      "Memperbarui dan meningkatkan fitur sistem yang ada",
+      "Mengimplementasikan fitur baru sesuai permintaan stakeholder",
+      "Memperbaiki bug dan menjaga stabilitas sistem",
+      "Membangun antarmuka web responsif yang meningkatkan kompatibilitas lintas perangkat"
     ],
-    "tech_stack": ["PHP", "MySQL", "Bootstrap"]
+    "tech_stack": ["PHP", "CodeIgniter", "MySQL", "Bootstrap", "JavaScript"]
+  },
+  {
+    "id": 5,
+    "role": "Web Developer",
+    "company": "Varx.id",
+    "company_logo": "fa-solid fa-v",
+    "location": "Yogyakarta",
+    "employment_type": "Full-time",
+    "year_start": "Mar 2020",
+    "year_end": "Jun 2020",
+    "is_current": false,
+    "description": "Membangun dan memelihara aplikasi web untuk mendukung operasional bisnis.",
+    "responsibilities": [
+      "Membangun dan memelihara aplikasi web untuk mendukung operasional bisnis",
+      "Memodifikasi dan memperbarui fitur yang ada sesuai kebutuhan",
+      "Menambahkan fungsionalitas baru berdasarkan permintaan pengguna",
+      "Troubleshoot dan menyelesaikan masalah pada sistem"
+    ],
+    "tech_stack": ["PHP", "MySQL", "JavaScript", "Bootstrap"]
+  },
+  {
+    "id": 6,
+    "role": "Web Developer",
+    "company": "Layana Computindo Sentratama",
+    "company_logo": "fa-solid fa-laptop-code",
+    "location": "Yogyakarta",
+    "employment_type": "Full-time",
+    "year_start": "Nov 2019",
+    "year_end": "Feb 2020",
+    "is_current": false,
+    "description": "Pekerjaan pertama sebagai Web Developer profesional, mengembangkan dan memelihara sistem berbasis web.",
+    "responsibilities": [
+      "Mengembangkan dan memelihara sistem berbasis web",
+      "Meningkatkan dan memperbarui fitur aplikasi sesuai kebutuhan",
+      "Mengimplementasikan fitur baru berdasarkan kebutuhan proyek",
+      "Memastikan aplikasi berjalan lancar melalui pemeliharaan rutin"
+    ],
+    "tech_stack": ["PHP", "MySQL", "JavaScript"]
+  },
+  {
+    "id": 7,
+    "role": "Asisten Laboratorium Komputer",
+    "company": "Universitas AMIKOM Yogyakarta",
+    "company_logo": "fa-solid fa-flask",
+    "location": "Yogyakarta",
+    "employment_type": "Part-time",
+    "year_start": "Jan 2018",
+    "year_end": "Des 2019",
+    "is_current": false,
+    "description": "Mendampingi mahasiswa selama sesi praktikum laboratorium sambil menempuh studi S1.",
+    "responsibilities": [
+      "Mendampingi mahasiswa selama sesi lab mengikuti instruksi dan materi kuliah",
+      "Memberikan dukungan teknis dasar untuk komputer dan perangkat lunak di laboratorium",
+      "Memastikan lingkungan lab komputer tertata dan siap untuk kegiatan belajar"
+    ],
+    "tech_stack": ["Windows", "Linux", "Jaringan Komputer"]
   }
 ]

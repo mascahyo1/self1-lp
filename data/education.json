@@ -1,31 +1,17 @@
 [
   {
     "id": 1,
-    "degree": "S1 Teknik Informatika",
-    "institution": "Universitas Gadjah Mada",
+    "degree": "S.Kom – Teknik Informatika",
+    "institution": "Universitas AMIKOM Yogyakarta",
     "location": "Yogyakarta",
     "year_start": "2016",
-    "year_end": "2020",
-    "gpa": "3.72",
-    "description": "Fokus pada pengembangan perangkat lunak dan kecerdasan buatan. Tugas akhir tentang sistem rekomendasi berbasis machine learning.",
+    "year_end": "2019",
+    "gpa": "3.58",
+    "description": "Lulus dengan predikat Cum Laude dengan IPK 3.58/4.00, menyelesaikan program studi dalam waktu 3,5 tahun. Aktif sebagai asisten laboratorium komputer selama masa kuliah.",
     "achievements": [
-      "Juara 2 Hackathon Nasional 2019",
-      "Ketua UKM Programming",
-      "Beasiswa Bidikmisi"
-    ]
-  },
-  {
-    "id": 2,
-    "degree": "SMA IPA",
-    "institution": "SMA Negeri 1 Sleman",
-    "location": "Sleman, DIY",
-    "year_start": "2013",
-    "year_end": "2016",
-    "gpa": null,
-    "description": "Aktif di bidang olimpiade komputer dan matematika.",
-    "achievements": [
-      "Juara 1 Olimpiade Komputer Kabupaten",
-      "Anggota OSIS"
+      "Cumlaude – IPK 3.58/4.00",
+      "Lulus dalam 3,5 tahun",
+      "Asisten Laboratorium Komputer AMIKOM (2018–2019)"
     ]
   }
 ]

@@ -1,25 +1,25 @@
 {
-  "name": "Budi Santoso",
-  "tagline": "Full Stack Developer & UI/UX Enthusiast",
-  "bio": "Saya adalah seorang pengembang web yang passionate dengan pengalaman 5+ tahun membangun aplikasi modern. Saya percaya bahwa kode yang baik adalah kode yang bisa dipahami orang lain.",
-  "location": "Yogyakarta, Indonesia",
-  "email": "budi@example.com",
-  "phone": "+62 812 3456 7890",
-  "website": "https://budi.dev",
+  "name": "Arif Cahyo Prasetyo",
+  "tagline": "Full Stack Web Developer & IT Lead",
+  "bio": "Passionate Full-Stack Web Developer dengan pengalaman sejak 2019, fokus membangun software berkualitas tinggi yang memberi dampak nyata. Terampil dalam PHP, Laravel, Vue.js, dan Tailwind CSS untuk mengembangkan aplikasi web yang responsif, scalable, dan efisien. Berpengalaman dalam manajemen database SQL, pengembangan backend, dan integrasi object storage.",
+  "location": "Jogorogo, Ngawi, Jawa Timur",
+  "email": "mascahyo15@gmail.com",
+  "phone": "085334190466",
+  "website": "https://github.com/mascahyo1",
   "avatar": "/images/avatar.jpg",
-  "resume": "/files/cv-budi-santoso.pdf",
-  "social": {
-    "github": "https://github.com/budisantoso",
-    "linkedin": "https://linkedin.com/in/budisantoso",
-    "twitter": "https://twitter.com/budisantoso",
-    "instagram": "https://instagram.com/budisantoso"
-  },
+  "resume": "/files/cv-arif-cahyo.pdf",
   "career_start_year": 2019,
-  "available_for_work": true,
+  "available_for_work": false,
+  "social": {
+    "github": "https://github.com/mascahyo1",
+    "linkedin": "https://linkedin.com/in/arifcahyo",
+    "twitter": "https://twitter.com/arifcahyo",
+    "instagram": "https://instagram.com/arifcahyo"
+  },
   "stats": [
     { "label": "Tahun Pengalaman", "value": "auto", "key": "years_of_experience" },
-    { "label": "Proyek Selesai", "value": "50+" },
-    { "label": "Klien Puas", "value": "30+" },
-    { "label": "Teh Diminum", "value": "∞" }
+    { "label": "Perusahaan", "value": "6+" },
+    { "label": "Proyek Selesai", "value": "20+" },
+    { "label": "Kopi Diminum", "value": "∞" }
   ]
 }

@@ -1,62 +1,62 @@
 [
   {
     "id": 1,
-    "title": "AWS Certified Solutions Architect",
-    "issuer": "Amazon Web Services",
-    "issuer_logo": "fa-brands fa-aws",
-    "date": "2023-08",
-    "credential_id": "AWS-SAA-123456",
-    "credential_url": "https://aws.amazon.com/certification/",
-    "tags": ["Cloud", "AWS", "Architecture"]
+    "title": "S.Kom – Cum Laude",
+    "issuer": "Universitas AMIKOM Yogyakarta",
+    "issuer_logo": "fa-solid fa-graduation-cap",
+    "date": "2019-12",
+    "credential_id": "AMIKOM-SK-2019",
+    "credential_url": "https://amikom.ac.id",
+    "tags": ["Akademik", "Informatika", "Cum Laude"]
   },
   {
     "id": 2,
-    "title": "Google Professional Cloud Developer",
-    "issuer": "Google Cloud",
-    "issuer_logo": "fa-brands fa-google",
-    "date": "2023-03",
-    "credential_id": "GCP-PCD-789012",
-    "credential_url": "https://cloud.google.com/certification",
-    "tags": ["Cloud", "GCP", "Development"]
+    "title": "Junior Web Developer",
+    "issuer": "BNSP (Badan Nasional Sertifikasi Profesi)",
+    "issuer_logo": "fa-solid fa-certificate",
+    "date": "2020-01",
+    "credential_id": "BNSP-JWD-2020",
+    "credential_url": "https://bnsp.go.id",
+    "tags": ["Web", "PHP", "Profesi"]
   },
   {
     "id": 3,
-    "title": "Meta Front-End Developer Professional",
-    "issuer": "Meta (Coursera)",
-    "issuer_logo": "fa-brands fa-meta",
-    "date": "2022-11",
-    "credential_id": "META-FED-345678",
-    "credential_url": "https://coursera.org",
-    "tags": ["Frontend", "React", "UI/UX"]
+    "title": "Belajar Dasar Pemrograman Web",
+    "issuer": "Dicoding Indonesia",
+    "issuer_logo": "fa-solid fa-d",
+    "date": "2021-03",
+    "credential_id": "DICODING-BDP-2021",
+    "credential_url": "https://dicoding.com",
+    "tags": ["HTML", "CSS", "Web", "Frontend"]
   },
   {
     "id": 4,
-    "title": "Certified Kubernetes Administrator",
-    "issuer": "CNCF / Linux Foundation",
-    "issuer_logo": "fa-brands fa-linux",
+    "title": "Belajar Back-End Pemula dengan JavaScript",
+    "issuer": "Dicoding Indonesia",
+    "issuer_logo": "fa-solid fa-d",
     "date": "2022-06",
-    "credential_id": "CKA-901234",
-    "credential_url": "https://www.cncf.io/certification/cka/",
-    "tags": ["DevOps", "Kubernetes", "Container"]
+    "credential_id": "DICODING-BEJS-2022",
+    "credential_url": "https://dicoding.com",
+    "tags": ["Node.js", "JavaScript", "Backend"]
   },
   {
     "id": 5,
-    "title": "Laravel Certified Developer",
-    "issuer": "Laravel",
-    "issuer_logo": "fa-solid fa-l",
-    "date": "2021-09",
-    "credential_id": "LAR-567890",
-    "credential_url": "https://laravel.com",
-    "tags": ["PHP", "Laravel", "Backend"]
+    "title": "AWS Cloud Practitioner Essentials",
+    "issuer": "AWS / Dicoding",
+    "issuer_logo": "fa-brands fa-aws",
+    "date": "2023-08",
+    "credential_id": "AWS-CPE-2023",
+    "credential_url": "https://aws.amazon.com",
+    "tags": ["Cloud", "AWS", "Infrastruktur"]
   },
   {
     "id": 6,
     "title": "Responsive Web Design",
     "issuer": "freeCodeCamp",
     "issuer_logo": "fa-solid fa-code",
-    "date": "2020-04",
-    "credential_id": "FCC-RWD-112233",
-    "credential_url": "https://www.freecodecamp.org",
-    "tags": ["HTML", "CSS", "Responsive"]
+    "date": "2020-09",
+    "credential_id": "FCC-RWD-2020",
+    "credential_url": "https://freecodecamp.org",
+    "tags": ["HTML", "CSS", "Responsive", "Frontend"]
   }
 ]

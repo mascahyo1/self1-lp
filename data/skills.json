@@ -1,39 +1,46 @@
 {
   "categories": [
     {
-      "name": "Frontend",
-      "icon": "fa-solid fa-layer-group",
-      "skills": [
-        { "name": "Vue.js", "level": 90, "icon": "fa-brands fa-vuejs" },
-        { "name": "Nuxt.js", "level": 85, "icon": "fa-solid fa-n" },
-        { "name": "React", "level": 75, "icon": "fa-brands fa-react" },
-        { "name": "TypeScript", "level": 80, "icon": "fa-solid fa-t" },
-        { "name": "Tailwind CSS", "level": 90, "icon": "fa-solid fa-wind" },
-        { "name": "HTML/CSS", "level": 95, "icon": "fa-brands fa-html5" }
-      ]
-    },
-    {
       "name": "Backend",
       "icon": "fa-solid fa-server",
       "skills": [
-        { "name": "Node.js", "level": 85, "icon": "fa-brands fa-node-js" },
-        { "name": "Laravel", "level": 80, "icon": "fa-solid fa-l" },
-        { "name": "PHP", "level": 75, "icon": "fa-brands fa-php" },
-        { "name": "Python", "level": 65, "icon": "fa-brands fa-python" },
-        { "name": "REST API", "level": 90, "icon": "fa-solid fa-plug" },
-        { "name": "GraphQL", "level": 70, "icon": "fa-solid fa-circle-nodes" }
+        { "name": "PHP", "level": 65, "icon": "fa-brands fa-php" },
+        { "name": "Laravel", "level": 60, "icon": "fa-solid fa-l" },
+        { "name": "CodeIgniter", "level": 60, "icon": "fa-solid fa-fire" },
+        { "name": "Node.js", "level": 15, "icon": "fa-brands fa-node-js" },
+        { "name": "RESTful API", "level": 70, "icon": "fa-solid fa-plug" },
+        { "name": "PocketBase", "level": 55, "icon": "fa-solid fa-database" }
       ]
     },
     {
-      "name": "Tools & Others",
+      "name": "Frontend",
+      "icon": "fa-solid fa-layer-group",
+      "skills": [
+        { "name": "Vue.js", "level": 65, "icon": "fa-brands fa-vuejs" },
+        { "name": "Nuxt.js", "level": 60, "icon": "fa-solid fa-n" },
+        { "name": "Tailwind CSS", "level": 70, "icon": "fa-solid fa-wind" },
+        { "name": "Web Design", "level": 40, "icon": "fa-solid fa-palette" },
+        { "name": "HTML/CSS", "level": 75, "icon": "fa-brands fa-html5" }
+      ]
+    },
+    {
+      "name": "Database & Storage",
+      "icon": "fa-solid fa-database",
+      "skills": [
+        { "name": "SQL / MySQL", "level": 50, "icon": "fa-solid fa-database" },
+        { "name": "MongoDB", "level": 10, "icon": "fa-solid fa-leaf" },
+        { "name": "AWS S3", "level": 55, "icon": "fa-brands fa-aws" }
+      ]
+    },
+    {
+      "name": "Tools & Lainnya",
       "icon": "fa-solid fa-wrench",
       "skills": [
-        { "name": "Git & GitHub", "level": 90, "icon": "fa-brands fa-github" },
-        { "name": "Docker", "level": 75, "icon": "fa-brands fa-docker" },
-        { "name": "MySQL / PostgreSQL", "level": 80, "icon": "fa-solid fa-database" },
-        { "name": "MongoDB", "level": 70, "icon": "fa-solid fa-leaf" },
-        { "name": "Figma", "level": 75, "icon": "fa-brands fa-figma" },
-        { "name": "Linux", "level": 70, "icon": "fa-brands fa-linux" }
+        { "name": "Linux", "level": 30, "icon": "fa-brands fa-linux" },
+        { "name": "Git & GitHub", "level": 65, "icon": "fa-brands fa-github" },
+        { "name": "C/C++/C#", "level": 35, "icon": "fa-solid fa-code" },
+        { "name": "Android", "level": 10, "icon": "fa-brands fa-android" },
+        { "name": "LUA", "level": 10, "icon": "fa-solid fa-moon" }
       ]
     }
   ]
