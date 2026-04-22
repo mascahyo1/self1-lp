@@ -12,35 +12,15 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
           <!-- Avatar Column -->
           <div class="flex justify-center">
-            <div class="relative">
-              <div class="w-64 h-64 rounded-3xl bg-gradient-to-br from-primary-400 to-indigo-600 p-1 shadow-2xl">
-                <div class="w-full h-full rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-800">
-                  <img
-                    v-if="avatarSrc"
-                    :src="avatarSrc"
-                    :alt="profile.name"
-                    class="w-full h-full object-cover"
-                  />
-                  <div v-else class="w-full h-full flex items-center justify-center">
-                    <fa icon="fa-solid fa-user" class="text-8xl text-primary-400 dark:text-primary-500" />
-                  </div>
-                </div>
-              </div>
-              <!-- Info Cards -->
-              <div class="absolute -top-4 -left-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-3 border border-gray-100 dark:border-gray-800">
-                <div class="flex items-center gap-2 text-sm">
-                  <fa icon="fa-solid fa-location-dot" class="text-primary-500" />
-                  <span class="font-medium text-gray-700 dark:text-gray-300">{{ profile.location }}</span>
-                </div>
-              </div>
-              <div
-                v-if="profile.available_for_work"
-                class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-3 border border-gray-100 dark:border-gray-800"
-              >
-                <div class="flex items-center gap-2 text-sm">
-                  <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span class="font-medium text-gray-700 dark:text-gray-300">Open to work</span>
-                </div>
+            <div class="w-56 lg:w-72 rounded-3xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800">
+              <img
+                v-if="avatarSrc"
+                :src="avatarSrc"
+                :alt="profile.name"
+                class="w-full h-auto block"
+              />
+              <div v-else class="w-full h-auto min-h-[16rem] flex items-center justify-center">
+                <fa icon="fa-solid fa-user" class="text-7xl text-gray-400 dark:text-gray-600" />
               </div>
             </div>
           </div>
@@ -53,6 +33,12 @@
 
             <!-- Contact Info -->
             <div class="space-y-3 mb-8">
+              <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-950 flex items-center justify-center flex-shrink-0">
+                  <fa icon="fa-solid fa-location-dot" class="text-primary-600 dark:text-primary-400" />
+                </div>
+                <span>{{ profile.location }}</span>
+              </div>
               <div class="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                 <div class="w-10 h-10 rounded-lg bg-primary-100 dark:bg-primary-950 flex items-center justify-center flex-shrink-0">
                   <fa icon="fa-solid fa-envelope" class="text-primary-600 dark:text-primary-400" />
@@ -108,7 +94,9 @@
             :key="stat.label"
             class="card text-center group hover:-translate-y-1"
           >
-            <div class="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">{{ stat.value }}</div>
+            <div class="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
+              {{ stat.key === 'years_of_experience' || stat.value === 'auto' ? yearsOfExperience : stat.value }}
+            </div>
             <div class="text-gray-500 dark:text-gray-400 text-sm">{{ stat.label }}</div>
           </div>
         </div>
@@ -140,6 +128,7 @@
 const profile = useProfile()
 
 const avatarSrc = computed(() => profile.avatar_url || profile.avatar || '')
+const yearsOfExperience = computed(() => `${new Date().getFullYear() - profile.career_start_year}+`)
 
 const workValues = [
   {

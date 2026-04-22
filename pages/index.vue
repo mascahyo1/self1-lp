@@ -70,26 +70,15 @@
           <!-- Right: Avatar + Stats -->
           <div class="flex flex-col items-center gap-8 animate-fade-in">
             <!-- Avatar -->
-            <div class="relative">
-              <div class="w-56 h-56 lg:w-72 lg:h-72 rounded-3xl bg-gradient-to-br from-primary-400 to-indigo-600 p-1 shadow-2xl">
-                <div class="w-full h-full rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-800">
-                  <img
-                    v-if="avatarSrc"
-                    :src="avatarSrc"
-                    :alt="profile.name"
-                    class="w-full h-full object-cover"
-                  />
-                  <div v-else class="w-full h-full flex items-center justify-center">
-                    <fa icon="fa-solid fa-user" class="text-7xl text-primary-400 dark:text-primary-500" />
-                  </div>
-                </div>
-              </div>
-              <!-- Floating Badge -->
-              <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-3 border border-gray-100 dark:border-gray-800">
-                <div class="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-                  <fa icon="fa-solid fa-code" class="text-primary-500" />
-                  <span>{{ yearsOfExperience }} Tahun</span>
-                </div>
+            <div class="w-56 lg:w-72 rounded-3xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800">
+              <img
+                v-if="avatarSrc"
+                :src="avatarSrc"
+                :alt="profile.name"
+                class="w-full h-auto block"
+              />
+              <div v-else class="w-full h-auto min-h-[16rem] flex items-center justify-center">
+                <fa icon="fa-solid fa-user" class="text-7xl text-gray-400 dark:text-gray-600" />
               </div>
             </div>
 
@@ -101,7 +90,7 @@
                 class="card text-center"
               >
                 <div class="text-2xl font-bold text-primary-600 dark:text-primary-400">
-                  {{ stat.key === 'years_of_experience' ? yearsOfExperience : stat.value }}
+                  {{ stat.key === 'years_of_experience' || stat.value === 'auto' ? yearsOfExperience : stat.value }}
                 </div>
                 <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ stat.label }}</div>
               </div>
