@@ -240,11 +240,7 @@ const featuredPortfolio = computed(() => portfolio.filter((p: any) => p.featured
 
 const yearsOfExperience = computed(() => `${new Date().getFullYear() - profile.career_start_year}+`)
 
-const socialLinks = {
-  github: profile.social.github,
-  linkedin: profile.social.linkedin,
-  twitter: profile.social.twitter,
-}
+const socialLinks = profile.social
 
 useSeoMeta({
   title: `${profile.name} - ${profile.tagline}`,

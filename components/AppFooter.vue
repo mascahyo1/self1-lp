@@ -86,10 +86,5 @@ const quickLinks = [
   { to: '/hubungi-saya', label: 'Hubungi Saya' },
 ]
 
-const socialLinks = {
-  github: profile.social.github,
-  linkedin: profile.social.linkedin,
-  twitter: profile.social.twitter,
-  instagram: profile.social.instagram,
-}
+const socialLinks = profile.social
 </script>
