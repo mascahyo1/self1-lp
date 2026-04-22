@@ -74,8 +74,8 @@
               <div class="w-56 h-56 lg:w-72 lg:h-72 rounded-3xl bg-gradient-to-br from-primary-400 to-indigo-600 p-1 shadow-2xl">
                 <div class="w-full h-full rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-800">
                   <img
-                    v-if="profile.avatar"
-                    :src="profile.avatar"
+                    v-if="avatarSrc"
+                    :src="avatarSrc"
                     :alt="profile.name"
                     class="w-full h-full object-cover"
                   />
@@ -246,6 +246,7 @@ const portfolio = usePortfolio()
 
 const featuredPortfolio = computed(() => portfolio.filter((p: any) => p.featured).slice(0, 3))
 
+const avatarSrc = computed(() => profile.avatar_url || profile.avatar || '')
 const yearsOfExperience = computed(() => `${new Date().getFullYear() - profile.career_start_year}+`)
 
 const socialLinks = profile.social

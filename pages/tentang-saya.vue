@@ -16,8 +16,8 @@
               <div class="w-64 h-64 rounded-3xl bg-gradient-to-br from-primary-400 to-indigo-600 p-1 shadow-2xl">
                 <div class="w-full h-full rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-800">
                   <img
-                    v-if="profile.avatar"
-                    :src="profile.avatar"
+                    v-if="avatarSrc"
+                    :src="avatarSrc"
                     :alt="profile.name"
                     class="w-full h-full object-cover"
                   />
@@ -138,6 +138,8 @@
 
 <script setup lang="ts">
 const profile = useProfile()
+
+const avatarSrc = computed(() => profile.avatar_url || profile.avatar || '')
 
 const workValues = [
   {
