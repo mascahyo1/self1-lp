@@ -6,9 +6,9 @@
     "company_logo": "fa-solid fa-network-wired",
     "location": "Remote",
     "employment_type": "Full-time",
-    "year_start": "Jan 2026",
-    "year_end": "Sekarang",
-    "is_current": true,
+    "year_start": "Feb 2026",
+    "year_end": "April 2026",
+    "is_current": false,
     "description": "Memimpin perencanaan, pengembangan, dan implementasi sistem internal untuk mendukung kebutuhan operasional di berbagai divisi bisnis. Mengelola anggaran IT dan strategi teknologi perusahaan.",
     "responsibilities": [
       "Memimpin perencanaan dan implementasi sistem internal lintas divisi bisnis",
@@ -26,7 +26,7 @@
   },
   {
     "id": 2,
-    "role": "Web Developer",
+    "role": "Senior Web Developer",
     "company": "PT Yulo (Yuk Laundry Online)",
     "company_logo": "fa-solid fa-shirt",
     "location": "Remote",
@@ -52,6 +52,31 @@
   {
     "id": 3,
     "role": "Web Developer",
+    "company": "PT Yulo (Yuk Laundry Online)",
+    "company_logo": "fa-solid fa-shirt",
+    "location": "Remote",
+    "employment_type": "Full-time",
+    "year_start": "Okt 2023",
+    "year_end": "Nov 2025",
+    "is_current": false,
+    "description": "Membangun dan memelihara platform ERP internal multi-modul untuk perusahaan laundry online berskala nasional, mencakup HR, Inventory, Sales, CRM, CXM, dan Equity Management.",
+    "responsibilities": [
+      "Mengembangkan dan memelihara modul HR (data karyawan, absensi, payroll, administrasi)",
+      "Membangun modul Inventory untuk manajemen stok, produk, gudang, dan pelaporan",
+      "Mengembangkan modul Sales untuk manajemen pesanan, harga, promosi, dan analitik penjualan",
+      "Membangun modul CRM untuk manajemen data dan interaksi pelanggan",
+      "Mengembangkan modul CXM untuk monitoring kepuasan dan kualitas layanan",
+      "Mengembangkan modul Equity/Shareholder Management untuk pencatatan kepemilikan saham",
+      "Mendesain dan mengembangkan RESTful API untuk Mobile App dan integrasi pihak ketiga",
+      "Membangun antarmuka web responsif menggunakan Vue.js dan Nuxt.js dengan backend Laravel",
+      "Mengimplementasikan sinkronisasi data real-time menggunakan PocketBase",
+      "Mengintegrasikan dan mengelola penyimpanan aset menggunakan AWS S3"
+    ],
+    "tech_stack": ["Laravel", "Vue.js", "Nuxt.js", "PocketBase", "AWS S3", "MySQL", "REST API"]
+  },
+  {
+    "id": 4,
+    "role": "Web Developer",
     "company": "CitraWeb Digital Multisolusi",
     "company_logo": "fa-solid fa-globe",
     "location": "Yogyakarta",
@@ -71,7 +96,7 @@
     "tech_stack": ["PHP", "Laravel", "MySQL", "JavaScript"]
   },
   {
-    "id": 4,
+    "id": 5,
     "role": "Web Developer",
     "company": "Rumahweb.com",
     "company_logo": "fa-solid fa-house-laptop",
@@ -91,7 +116,7 @@
     "tech_stack": ["PHP", "CodeIgniter", "MySQL", "Bootstrap", "JavaScript"]
   },
   {
-    "id": 5,
+    "id": 6,
     "role": "Web Developer",
     "company": "Varx.id",
     "company_logo": "fa-solid fa-v",
@@ -110,7 +135,7 @@
     "tech_stack": ["PHP", "MySQL", "JavaScript", "Bootstrap"]
   },
   {
-    "id": 6,
+    "id": 7,
     "role": "Web Developer",
     "company": "Layana Computindo Sentratama",
     "company_logo": "fa-solid fa-laptop-code",
@@ -129,7 +154,7 @@
     "tech_stack": ["PHP", "MySQL", "JavaScript"]
   },
   {
-    "id": 7,
+    "id": 8,
     "role": "Asisten Laboratorium Komputer",
     "company": "Universitas AMIKOM Yogyakarta",
     "company_logo": "fa-solid fa-flask",
