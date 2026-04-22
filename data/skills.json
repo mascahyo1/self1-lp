@@ -42,6 +42,17 @@
         { "name": "Android", "level": 10, "icon": "fa-brands fa-android" },
         { "name": "LUA", "level": 10, "icon": "fa-solid fa-moon" }
       ]
+    },
+    {
+      "name": "Pemahaman Bisnis",
+      "icon": "fa-solid fa-briefcase",
+      "skills": [
+        { "name": "Sistem ERP", "level": 70, "icon": "fa-solid fa-sitemap" },
+        { "name": "Point of Sales (POS)", "level": 70, "icon": "fa-solid fa-cash-register" },
+        { "name": "HRIS", "level": 70, "icon": "fa-solid fa-users-gear" },
+        { "name": "Akuntansi", "level": 68, "icon": "fa-solid fa-calculator" },
+        { "name": "CRM / CXM", "level": 60, "icon": "fa-solid fa-handshake" }
+      ]
     }
   ]
 }
