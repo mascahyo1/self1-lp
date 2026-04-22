@@ -11,7 +11,7 @@
     "icon": "fa-solid fa-boxes-stacked",
     "title": "Pengembangan ERP / Sistem Internal",
     "description": "Merancang dan membangun sistem ERP multi-modul atau aplikasi internal yang mengintegrasikan berbagai proses bisnis dalam satu platform.",
-    "features": ["Modul HR & Payroll", "Inventory Management", "CRM & Sales Module", "Dashboard & Reporting"]
+    "features": ["Modul HR & Payroll", "Inventory Management", "CRM & CXM", "Point Of Sales", "Accounting", "Dashboard & Reporting", "Integrasi Whatsapp API"]
   },
   {
     "id": 3,
