@@ -6,8 +6,27 @@
         class="h-72 md:h-96 relative flex items-center justify-center overflow-hidden"
         :class="getGradient(project.id)"
       >
-        <fa icon="fa-solid fa-globe" class="text-[10rem] text-white/10" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+        <!-- Image with Error Handling -->
+        <img 
+          v-if="project.image_main && !mainImageError" 
+          :src="project.image_main" 
+          :alt="project.title" 
+          @error="mainImageError = true"
+          class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" 
+        />
+        
+        <!-- Beautiful Placeholder Fallback -->
+        <div v-else class="absolute inset-0 w-full h-full group">
+          <div class="absolute -top-32 -left-32 w-[30rem] h-[30rem] bg-white/20 rounded-full blur-[100px]" />
+          <div class="absolute -bottom-32 -right-32 w-[30rem] h-[30rem] bg-black/30 rounded-full blur-[100px]" />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-40 h-40 rounded-[2.5rem] bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-2xl rotate-12 group-hover:rotate-0 transition-all duration-700">
+               <fa icon="fa-solid fa-layer-group" class="text-7xl text-white/50 -rotate-12 group-hover:rotate-0 transition-all duration-700" />
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         <!-- Breadcrumb -->
         <div class="absolute top-6 left-0 right-0 section-container">
           <NuxtLink to="/portfolio" class="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-sm transition-colors">
@@ -49,18 +68,35 @@
 
               <!-- Main Image -->
               <div
-                class="h-64 md:h-80 rounded-2xl overflow-hidden mb-3 cursor-pointer"
+                class="h-64 md:h-80 rounded-2xl overflow-hidden mb-3 cursor-pointer relative group"
                 :class="getGradient(project.id)"
                 @click="lightboxIndex = 0; lightboxOpen = true"
               >
-                <div class="w-full h-full flex items-center justify-center relative">
-                  <fa icon="fa-solid fa-image" class="text-6xl text-white/30" />
-                  <div class="absolute inset-0 flex items-end p-4">
-                    <span class="text-white/60 text-sm">{{ project.image_main || 'Main image' }}</span>
+                <!-- Actual Image -->
+                <img 
+                  v-if="project.image_main && !mainImageError" 
+                  :src="project.image_main" 
+                  :alt="project.title" 
+                  @error="mainImageError = true"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                />
+                
+                <!-- Placeholder Fallback -->
+                <div v-else class="w-full h-full flex items-center justify-center relative overflow-hidden">
+                  <div class="absolute -top-16 -right-16 w-64 h-64 bg-white/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+                  <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-black/20 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-700" />
+                  
+                  <div class="w-24 h-24 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center relative z-10 shadow-xl group-hover:-translate-y-2 transition-transform duration-500">
+                    <fa icon="fa-solid fa-image" class="text-4xl text-white/70" />
                   </div>
-                  <div class="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-center justify-center">
-                    <fa icon="fa-solid fa-expand" class="text-white opacity-0 hover:opacity-100 text-2xl" />
+                  
+                  <div class="absolute inset-0 flex items-end p-5 z-10 bg-gradient-to-t from-black/60 to-transparent">
+                    <span class="text-white font-medium drop-shadow-md">{{ project.title }}</span>
                   </div>
+                </div>
+                
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center z-20">
+                  <fa icon="fa-solid fa-expand" class="text-white opacity-0 group-hover:opacity-100 text-3xl drop-shadow-lg" />
                 </div>
               </div>
 
@@ -306,6 +342,8 @@
 const route = useRoute()
 const profile = useProfile()
 const portfolio = usePortfolio()
+
+const mainImageError = ref(false)
 
 const project = computed(() => portfolio.find((p: any) => p.slug === route.params.slug))
 
