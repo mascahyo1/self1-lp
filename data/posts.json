@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "slug": "memulai-dengan-nuxt-3",
+    "title": "Memulai dengan Nuxt 3: Panduan Lengkap untuk Pemula",
+    "excerpt": "Nuxt 3 hadir dengan banyak fitur baru yang membuatnya semakin powerful. Artikel ini membahas cara setup awal hingga deploy pertama Anda.",
+    "content": "## Apa itu Nuxt 3?\n\nNuxt 3 adalah framework Vue.js full-stack yang dibangun di atas Vite, Nitro, dan Vue 3. Ia memberikan pengalaman developer yang luar biasa dengan fitur seperti auto-import, file-based routing, dan server-side rendering out of the box.\n\n## Mengapa Nuxt 3?\n\nAda beberapa alasan kuat mengapa Nuxt 3 menjadi pilihan utama:\n\n- **Performance** — Build lebih cepat dengan Vite, bundle lebih kecil\n- **DX** — Auto-import komponen dan composables\n- **Fleksibel** — Bisa SSR, SSG, atau SPA sesuai kebutuhan\n- **TypeScript** — Support penuh tanpa konfigurasi tambahan\n\n## Instalasi\n\nCukup jalankan satu perintah:\n\n```bash\nnpx nuxi@latest init my-project\n```\n\n## Struktur Folder\n\nNuxt 3 menggunakan konvensi folder yang intuitif:\n\n- `pages/` — routing otomatis\n- `components/` — auto-imported\n- `composables/` — auto-imported\n- `layouts/` — layout wrapper\n- `server/` — API routes\n\n## Kesimpulan\n\nNuxt 3 adalah pilihan tepat untuk membangun aplikasi web modern. Ekosistemnya yang kaya dan dokumentasi yang lengkap membuatnya mudah dipelajari namun sangat powerful untuk production.",
+    "cover": "/images/posts/nuxt3.jpg",
+    "category": "Tutorial",
+    "tags": ["Nuxt.js", "Vue.js", "JavaScript"],
+    "published_at": "2024-10-15",
+    "read_time": 8,
+    "featured": true
+  },
+  {
+    "id": 2,
+    "slug": "tailwind-css-tips-dan-trik",
+    "title": "10 Tips Tailwind CSS yang Wajib Kamu Tahu",
+    "excerpt": "Setelah bertahun-tahun menggunakan Tailwind CSS, saya merangkum tips dan trik yang paling berguna dan sering saya pakai.",
+    "content": "## Kenapa Tailwind?\n\nTailwind CSS adalah utility-first CSS framework yang memungkinkan kamu membangun UI langsung di HTML tanpa menulis CSS terpisah. Setelah terbiasa, produktivitas meningkat drastis.\n\n## Tips #1: Gunakan @apply untuk komponen berulang\n\nJika ada kombinasi class yang sering dipakai, buat komponen CSS dengan `@apply`:\n\n```css\n.btn-primary {\n  @apply px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700;\n}\n```\n\n## Tips #2: Manfaatkan arbitrary values\n\nTailwind mendukung nilai kustom dengan bracket notation:\n\n```html\n<div class=\"w-[327px] bg-[#1a1a2e]\">\n```\n\n## Tips #3: Dark mode dengan class strategy\n\nAktifkan dark mode di config:\n\n```js\ndarkMode: 'class'\n```\n\nLalu tambahkan class `dark` di `<html>` saat mode gelap aktif.\n\n## Tips #4: Group hover\n\nSangat berguna untuk card dengan efek hover:\n\n```html\n<div class=\"group\">\n  <img class=\"group-hover:scale-105 transition-transform\" />\n  <p class=\"group-hover:text-blue-600\">Judul</p>\n</div>\n```\n\n## Kesimpulan\n\nTailwind CSS memang punya learning curve di awal, tapi sekali terbiasa, sangat sulit untuk kembali ke cara lama.",
+    "cover": "/images/posts/tailwind.jpg",
+    "category": "Tips & Trik",
+    "tags": ["Tailwind CSS", "CSS", "Frontend"],
+    "published_at": "2024-09-02",
+    "read_time": 6,
+    "featured": true
+  },
+  {
+    "id": 3,
+    "slug": "typescript-untuk-vue-developer",
+    "title": "TypeScript untuk Vue Developer: Mulai dari Mana?",
+    "excerpt": "Banyak developer Vue yang ragu beralih ke TypeScript. Artikel ini membahas titik mulai yang tepat dan manfaat nyatanya di project Vue.",
+    "content": "## Mengapa TypeScript?\n\nTypeScript memberikan type safety yang membuat bug lebih mudah ditemukan saat development, bukan saat production. Dengan Vue 3 yang ditulis dalam TypeScript, integrasi keduanya sangat mulus.\n\n## Setup di Vue/Nuxt\n\nUntuk Nuxt 3, TypeScript sudah aktif secara default. Cukup buat file `.ts` atau `.vue` dengan `<script setup lang=\"ts\">`.\n\n## Mendeklarasikan Props dengan Type\n\n```typescript\ninterface Props {\n  title: string\n  count?: number\n  items: string[]\n}\n\nconst props = defineProps<Props>()\n```\n\n## Composable yang Type-safe\n\n```typescript\nfunction useCounter(initial: number = 0) {\n  const count = ref<number>(initial)\n  const increment = () => count.value++\n  return { count, increment }\n}\n```\n\n## Tips Migrasi\n\n1. Mulai dengan file baru, bukan migrasi sekaligus\n2. Gunakan `any` sementara, lalu perbaiki sedikit demi sedikit\n3. Aktifkan `strict: true` di `tsconfig.json`\n\n## Kesimpulan\n\nBeralih ke TypeScript adalah investasi jangka panjang. Mungkin terasa lambat di awal, tapi hasilnya adalah kode yang lebih maintainable.",
+    "cover": "/images/posts/typescript.jpg",
+    "category": "Tutorial",
+    "tags": ["TypeScript", "Vue.js", "JavaScript"],
+    "published_at": "2024-07-20",
+    "read_time": 10,
+    "featured": false
+  },
+  {
+    "id": 4,
+    "slug": "optimasi-performa-web-app",
+    "title": "Cara Optimasi Performa Web App hingga Lighthouse 100",
+    "excerpt": "Mencapai skor Lighthouse 100 bukan sekadar gimmick. Artikel ini membahas teknik nyata yang bisa langsung diterapkan.",
+    "content": "## Mengapa Performa Penting?\n\nSetiap 100ms penundaan loading dapat menurunkan konversi hingga 7%. Google juga menggunakan Core Web Vitals sebagai faktor ranking SEO.\n\n## 1. Lazy Load Images\n\nGunakan atribut `loading=\"lazy\"` atau Intersection Observer:\n\n```html\n<img src=\"photo.jpg\" loading=\"lazy\" alt=\"...\" />\n```\n\n## 2. Code Splitting\n\nNuxt otomatis melakukan code splitting per halaman. Untuk komponen besar, gunakan:\n\n```javascript\nconst HeavyComponent = defineAsyncComponent(() =>\n  import('./HeavyComponent.vue')\n)\n```\n\n## 3. Optimalkan Font\n\n```html\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />\n<link rel=\"preload\" as=\"font\" crossorigin />\n```\n\n## 4. Minimalkan JavaScript\n\n- Tree-shake library yang tidak terpakai\n- Gunakan bundle analyzer untuk identifikasi bloat\n- Pertimbangkan alternatif yang lebih ringan\n\n## Kesimpulan\n\nOptimasi performa adalah proses berkelanjutan. Ukur dulu, lalu optimasi bagian yang paling berdampak.",
+    "cover": "/images/posts/performance.jpg",
+    "category": "Tips & Trik",
+    "tags": ["Performance", "SEO", "Web"],
+    "published_at": "2024-06-05",
+    "read_time": 7,
+    "featured": false
+  },
+  {
+    "id": 5,
+    "slug": "docker-untuk-developer-web",
+    "title": "Docker untuk Developer Web: Panduan Praktis",
+    "excerpt": "Docker bukan hanya untuk DevOps. Sebagai developer web, memahami Docker akan sangat mempermudah workflow development dan deployment.",
+    "content": "## Apa itu Docker?\n\nDocker adalah platform containerization yang memungkinkan kamu menjalankan aplikasi dalam environment yang terisolasi dan konsisten di semua mesin.\n\n## Konsep Dasar\n\n- **Image** — Blueprint dari container\n- **Container** — Instance yang berjalan dari image\n- **Dockerfile** — Instruksi untuk membangun image\n- **docker-compose** — Orkestrasi multi-container\n\n## Dockerfile untuk Node.js\n\n```dockerfile\nFROM node:20-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --only=production\nCOPY . .\nEXPOSE 3000\nCMD [\"node\", \"server.js\"]\n```\n\n## docker-compose untuk Dev\n\n```yaml\nservices:\n  app:\n    build: .\n    ports: [\"3000:3000\"]\n    volumes: [\".:/app\"]\n  db:\n    image: postgres:16\n    environment:\n      POSTGRES_PASSWORD: secret\n```\n\n## Kesimpulan\n\nSekali belajar Docker, kamu tidak akan mau development tanpanya. Konsistensi environment = tidak ada lagi 'works on my machine'.",
+    "cover": "/images/posts/docker.jpg",
+    "category": "DevOps",
+    "tags": ["Docker", "DevOps", "Backend"],
+    "published_at": "2024-04-18",
+    "read_time": 9,
+    "featured": true
+  },
+  {
+    "id": 6,
+    "slug": "clean-code-prinsip-dasar",
+    "title": "Clean Code: Prinsip Dasar yang Harus Dipahami Setiap Developer",
+    "excerpt": "Menulis kode yang berjalan itu mudah. Menulis kode yang bisa dipahami orang lain — itu seni. Inilah prinsip-prinsip clean code yang saya pegang.",
+    "content": "## Apa itu Clean Code?\n\nClean code adalah kode yang mudah dibaca, dipahami, dan dimodifikasi oleh developer lain (atau diri sendiri di masa depan).\n\n## Prinsip 1: Nama yang Bermakna\n\nJangan takut nama panjang yang deskriptif:\n\n```javascript\n// Buruk\nconst d = new Date()\nconst u = users.filter(x => x.a)\n\n// Baik\nconst currentDate = new Date()\nconst activeUsers = users.filter(user => user.isActive)\n```\n\n## Prinsip 2: Fungsi Kecil dan Fokus\n\nSatu fungsi, satu tanggung jawab:\n\n```javascript\n// Buruk: fungsi melakukan banyak hal\nfunction processUser(user) { /* validate + save + email */ }\n\n// Baik: pisahkan tanggung jawab\nfunction validateUser(user) { ... }\nfunction saveUser(user) { ... }\nfunction sendWelcomeEmail(user) { ... }\n```\n\n## Prinsip 3: Hindari Komentar yang Menjelaskan 'Apa'\n\nKomentar yang baik menjelaskan 'Mengapa', bukan 'Apa':\n\n```javascript\n// Buruk: menjelaskan apa yang sudah jelas dari kode\n// Loop through users\nusers.forEach(user => ...)\n\n// Baik: menjelaskan mengapa\n// Retry 3x karena API payment kadang timeout di detik pertama\nfor (let i = 0; i < 3; i++) { ... }\n```\n\n## Kesimpulan\n\nClean code adalah kebiasaan yang dibangun perlahan. Mulai dari penamaan variabel yang lebih baik, dan selebihnya akan mengikuti.",
+    "cover": "/images/posts/cleancode.jpg",
+    "category": "Best Practice",
+    "tags": ["Clean Code", "Best Practice", "Programming"],
+    "published_at": "2024-03-10",
+    "read_time": 8,
+    "featured": false
+  }
+]

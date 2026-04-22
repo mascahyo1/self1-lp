@@ -112,6 +112,7 @@ const navLinks = [
   { to: '/sertifikat', label: 'Sertifikat' },
   { to: '/portfolio', label: 'Portfolio' },
   { to: '/riwayat-pekerjaan', label: 'Pengalaman' },
+  { to: '/posts', label: 'Posts' },
   { to: '/hubungi-saya', label: 'Kontak' },
 ]
 
