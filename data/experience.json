@@ -22,7 +22,14 @@
       "Memberikan kepemimpinan teknis dan mentoring kepada developer",
       "Memastikan inovasi berkelanjutan untuk meningkatkan efisiensi operasional"
     ],
-    "tech_stack": ["Laravel", "Vue.js", "Nuxt.js", "PocketBase", "AWS S3", "MySQL"]
+    "tech_stack": [
+      "Laravel",
+      "Vue.js",
+      "Nuxt.js",
+      "PocketBase",
+      "AWS S3",
+      "MySQL"
+    ]
   },
   {
     "id": 2,
@@ -47,7 +54,15 @@
       "Mengimplementasikan sinkronisasi data real-time menggunakan PocketBase",
       "Mengintegrasikan dan mengelola penyimpanan aset menggunakan AWS S3"
     ],
-    "tech_stack": ["Laravel", "Vue.js", "Nuxt.js", "PocketBase", "AWS S3", "MySQL", "REST API"]
+    "tech_stack": [
+      "Laravel",
+      "Vue.js",
+      "Nuxt.js",
+      "PocketBase",
+      "AWS S3",
+      "MySQL",
+      "REST API"
+    ]
   },
   {
     "id": 3,
@@ -72,7 +87,15 @@
       "Mengimplementasikan sinkronisasi data real-time menggunakan PocketBase",
       "Mengintegrasikan dan mengelola penyimpanan aset menggunakan AWS S3"
     ],
-    "tech_stack": ["Laravel", "Vue.js", "Nuxt.js", "PocketBase", "AWS S3", "MySQL", "REST API"]
+    "tech_stack": [
+      "Laravel",
+      "Vue.js",
+      "Nuxt.js",
+      "PocketBase",
+      "AWS S3",
+      "MySQL",
+      "REST API"
+    ]
   },
   {
     "id": 4,
@@ -93,7 +116,13 @@
       "Memelihara dan memastikan stabilitas sistem yang berjalan",
       "Berkolaborasi dengan anggota tim untuk menghadirkan solusi web yang andal"
     ],
-    "tech_stack": ["PHP", "Laravel", "MySQL", "JavaScript"]
+    "tech_stack": [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "Bootstrap",
+      "Jquery"
+    ]
   },
   {
     "id": 5,
@@ -113,7 +142,13 @@
       "Memperbaiki bug dan menjaga stabilitas sistem",
       "Membangun antarmuka web responsif yang meningkatkan kompatibilitas lintas perangkat"
     ],
-    "tech_stack": ["PHP", "CodeIgniter", "MySQL", "Bootstrap", "JavaScript"]
+    "tech_stack": [
+      "PHP",
+      "CodeIgniter",
+      "MySQL",
+      "Bootstrap",
+      "JavaScript"
+    ]
   },
   {
     "id": 6,
@@ -132,7 +167,15 @@
       "Menambahkan fungsionalitas baru berdasarkan permintaan pengguna",
       "Troubleshoot dan menyelesaikan masalah pada sistem"
     ],
-    "tech_stack": ["PHP", "MySQL", "JavaScript", "Bootstrap"]
+    "tech_stack": [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "Bootstrap",
+      "Laravel",
+      "Jquery",
+      "AWS S3"
+    ]
   },
   {
     "id": 7,
@@ -151,7 +194,14 @@
       "Mengimplementasikan fitur baru berdasarkan kebutuhan proyek",
       "Memastikan aplikasi berjalan lancar melalui pemeliharaan rutin"
     ],
-    "tech_stack": ["PHP", "MySQL", "JavaScript"]
+    "tech_stack": [
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "Laravel",
+      "Bootstrap",
+      "Jquery"
+    ]
   },
   {
     "id": 8,
@@ -169,6 +219,10 @@
       "Memberikan dukungan teknis dasar untuk komputer dan perangkat lunak di laboratorium",
       "Memastikan lingkungan lab komputer tertata dan siap untuk kegiatan belajar"
     ],
-    "tech_stack": ["Windows", "Linux", "Jaringan Komputer"]
+    "tech_stack": [
+      "Windows",
+      "Linux",
+      "Jaringan Komputer"
+    ]
   }
 ]
