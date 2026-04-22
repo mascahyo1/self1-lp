@@ -9,9 +9,21 @@
 
     <section class="py-16">
       <div class="section-container">
+        <!-- Search -->
+        <div class="max-w-lg mx-auto mb-10">
+          <SearchInput v-model="search" placeholder="Cari nama skill atau teknologi..." />
+        </div>
+
+        <!-- Empty state -->
+        <div v-if="search && filteredCategories.length === 0" class="text-center py-16">
+          <fa icon="fa-solid fa-magnifying-glass" class="text-5xl text-gray-300 dark:text-gray-700 mb-4 block" />
+          <p class="text-gray-500 dark:text-gray-400 mb-2">Skill tidak ditemukan</p>
+          <button @click="search = ''" class="text-sm text-primary-600 dark:text-primary-400 hover:underline">Reset</button>
+        </div>
+
         <div class="space-y-12">
           <div
-            v-for="category in skills.categories"
+            v-for="category in filteredCategories"
             :key="category.name"
           >
             <!-- Category Header -->
@@ -84,6 +96,17 @@
 <script setup lang="ts">
 const profile = useProfile()
 const skills = useSkills()
+
+const search = ref('')
+
+const filteredCategories = computed(() => {
+  if (!search.value.trim()) return skills.categories
+  const q = search.value.toLowerCase()
+  return skills.categories.map((cat: any) => ({
+    ...cat,
+    skills: cat.skills.filter((s: any) => s.name.toLowerCase().includes(q)),
+  })).filter((cat: any) => cat.skills.length > 0)
+})
 
 const allSkills = computed(() =>
   skills.categories.flatMap((c: any) => c.skills).sort((a: any, b: any) => b.level - a.level)

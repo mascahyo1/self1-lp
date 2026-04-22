@@ -9,6 +9,15 @@
 
     <section class="py-16">
       <div class="section-container">
+        <!-- Search -->
+        <div class="max-w-lg mx-auto mb-6">
+          <SearchInput v-model="search" placeholder="Cari nama, penerbit, tag..." />
+        </div>
+        <p v-if="search" class="text-sm text-center text-gray-500 dark:text-gray-400 mb-6">
+          <span class="font-semibold text-gray-900 dark:text-white">{{ filteredCertificates.length }}</span>
+          hasil untuk "<span class="text-primary-600 dark:text-primary-400">{{ search }}</span>"
+        </p>
+
         <!-- Filter Tags -->
         <div class="flex flex-wrap gap-2 mb-10 justify-center">
           <button
@@ -91,6 +100,7 @@
 const profile = useProfile()
 const certificates = useCertificates()
 
+const search = ref('')
 const activeFilter = ref('')
 
 const allTags = computed(() => {
@@ -99,11 +109,20 @@ const allTags = computed(() => {
   return Array.from(tags)
 })
 
-const filteredCertificates = computed(() =>
-  activeFilter.value
-    ? certificates.filter((c: any) => c.tags.includes(activeFilter.value))
-    : certificates
-)
+const filteredCertificates = computed(() => {
+  let result = [...certificates] as any[]
+  if (activeFilter.value) result = result.filter(c => c.tags.includes(activeFilter.value))
+  if (search.value.trim()) {
+    const q = search.value.toLowerCase()
+    result = result.filter(c =>
+      c.title.toLowerCase().includes(q) ||
+      c.issuer.toLowerCase().includes(q) ||
+      c.tags.some((t: string) => t.toLowerCase().includes(q)) ||
+      c.credential_id.toLowerCase().includes(q)
+    )
+  }
+  return result
+})
 
 function formatDate(dateStr: string): string {
   const [year, month] = dateStr.split('-')

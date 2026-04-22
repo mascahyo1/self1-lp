@@ -9,6 +9,17 @@
 
     <section class="py-16">
       <div class="section-container">
+        <!-- Search -->
+        <div class="max-w-lg mx-auto mb-6">
+          <SearchInput v-model="search" placeholder="Cari judul, kategori, tag..." />
+        </div>
+
+        <!-- Result hint -->
+        <p v-if="search" class="text-sm text-center text-gray-500 dark:text-gray-400 mb-6">
+          <span class="font-semibold text-gray-900 dark:text-white">{{ filteredPosts.length }}</span>
+          hasil untuk "<span class="text-primary-600 dark:text-primary-400">{{ search }}</span>"
+        </p>
+
         <!-- Filter -->
         <div class="flex flex-wrap gap-2 mb-10 justify-center">
           <button
@@ -120,9 +131,12 @@
           </TransitionGroup>
         </div>
 
-        <div v-if="filteredPosts.length === 0" class="text-center py-20 text-gray-400">
-          <fa icon="fa-solid fa-pen-nib" class="text-4xl mb-4 block" />
-          Tidak ada post untuk kategori ini
+        <div v-if="filteredPosts.length === 0" class="text-center py-20">
+          <fa icon="fa-solid fa-pen-nib" class="text-5xl text-gray-300 dark:text-gray-700 mb-4 block" />
+          <p class="text-gray-500 dark:text-gray-400 mb-2">Tidak ada post yang cocok</p>
+          <button @click="search = ''; activeFilter = ''" class="text-sm text-primary-600 dark:text-primary-400 hover:underline">
+            Reset pencarian
+          </button>
         </div>
       </div>
     </section>
@@ -133,6 +147,7 @@
 const profile = useProfile()
 const posts = usePosts()
 
+const search = ref('')
 const activeFilter = ref('')
 
 const categories = computed(() => {
@@ -141,14 +156,25 @@ const categories = computed(() => {
   return Array.from(cats)
 })
 
-const featuredPost = computed(() => posts.find((p: any) => p.featured))
+const featuredPost = computed(() => !search.value && !activeFilter.value ? posts.find((p: any) => p.featured) : null)
 
 const filteredPosts = computed(() => {
-  const sorted = [...posts].sort(
+  let result = [...posts].sort(
     (a: any, b: any) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
-  )
-  if (activeFilter.value) return sorted.filter((p: any) => p.category === activeFilter.value)
-  return sorted.filter((p: any) => !p.featured || activeFilter.value)
+  ) as any[]
+  if (activeFilter.value) result = result.filter(p => p.category === activeFilter.value)
+  if (search.value.trim()) {
+    const q = search.value.toLowerCase()
+    result = result.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.excerpt.toLowerCase().includes(q) ||
+      p.category.toLowerCase().includes(q) ||
+      p.tags.some((t: string) => t.toLowerCase().includes(q))
+    )
+  }
+  // Sembunyikan featured dari grid jika tidak ada search/filter (sudah tampil di slot featured)
+  if (!search.value && !activeFilter.value) result = result.filter(p => !p.featured)
+  return result
 })
 
 const gradients = [

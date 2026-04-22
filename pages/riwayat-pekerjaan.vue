@@ -9,13 +9,24 @@
 
     <section class="py-16">
       <div class="section-container max-w-3xl">
+        <!-- Search -->
+        <div class="mb-8">
+          <SearchInput v-model="search" placeholder="Cari posisi, perusahaan, teknologi..." />
+        </div>
+
+        <div v-if="search && filteredExperience.length === 0" class="text-center py-16">
+          <fa icon="fa-solid fa-magnifying-glass" class="text-5xl text-gray-300 dark:text-gray-700 mb-4 block" />
+          <p class="text-gray-500 dark:text-gray-400 mb-2">Tidak ada hasil</p>
+          <button @click="search = ''" class="text-sm text-primary-600 dark:text-primary-400 hover:underline">Reset</button>
+        </div>
+
         <div class="relative">
           <!-- Timeline Line -->
           <div class="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500 via-primary-300 to-transparent hidden sm:block" />
 
           <div class="space-y-8">
             <div
-              v-for="exp in experience"
+              v-for="exp in filteredExperience"
               :key="exp.id"
               class="relative sm:pl-20"
             >
@@ -97,6 +108,20 @@
 <script setup lang="ts">
 const profile = useProfile()
 const experience = useExperience()
+
+const search = ref('')
+
+const filteredExperience = computed(() => {
+  if (!search.value.trim()) return experience
+  const q = search.value.toLowerCase()
+  return experience.filter((e: any) =>
+    e.role.toLowerCase().includes(q) ||
+    e.company.toLowerCase().includes(q) ||
+    e.description.toLowerCase().includes(q) ||
+    e.tech_stack.some((t: string) => t.toLowerCase().includes(q)) ||
+    e.responsibilities.some((r: string) => r.toLowerCase().includes(q))
+  )
+})
 
 useSeoMeta({
   title: `Riwayat Pekerjaan - ${profile.name}`,
