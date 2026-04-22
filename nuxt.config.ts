@@ -20,6 +20,13 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'id' },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+      ],
+      meta: [
+        { name: 'theme-color', content: '#6366f1' },
+        { property: 'og:type', content: 'website' },
+        { name: 'twitter:card', content: 'summary_large_image' },
       ],
     },
   },
