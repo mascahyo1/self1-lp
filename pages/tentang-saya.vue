@@ -110,7 +110,7 @@
           <h2 class="section-title">Prinsip Kerja Saya</h2>
           <p class="section-subtitle">Nilai-nilai yang saya pegang dalam setiap proyek</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="value in workValues" :key="value.title" class="card text-center group hover:-translate-y-1">
             <div class="w-14 h-14 rounded-2xl bg-primary-100 dark:bg-primary-950 flex items-center justify-center text-primary-600 dark:text-primary-400 mx-auto mb-4 text-2xl group-hover:bg-primary-600 group-hover:text-white transition-all duration-300">
               <fa :icon="value.icon" />
@@ -135,6 +135,11 @@ const workValues = [
     icon: 'fa-solid fa-code',
     title: 'Clean Code',
     desc: 'Kode yang bersih, terdokumentasi, dan mudah dipahami oleh siapapun adalah prioritas utama.',
+  },
+  {
+    icon: 'fa-solid fa-vial',
+    title: 'Automated Testing',
+    desc: 'Setiap langkah di-test dengan logging jelas, screenshot, dan video. Debugging lebih cepat dan hasilnya lebih confident.',
   },
   {
     icon: 'fa-solid fa-rocket',

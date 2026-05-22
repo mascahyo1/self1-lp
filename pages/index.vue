@@ -140,7 +140,7 @@
           <p class="section-subtitle">Solusi digital terbaik untuk kebutuhan bisnis Anda</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-10">
           <div
             v-for="service in services"
             :key="service.id"

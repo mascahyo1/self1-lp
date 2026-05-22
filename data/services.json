@@ -26,5 +26,12 @@
     "title": "IT Consulting & Technical Lead",
     "description": "Membantu tim atau perusahaan dalam perencanaan teknologi, arsitektur sistem, code review, dan mentoring developer.",
     "features": ["System Architecture Planning", "Tech Stack Evaluation", "Code Review & Mentoring", "IT Budget Planning"]
+  },
+  {
+    "id": 5,
+    "icon": "fa-solid fa-vial",
+    "title": "Automated Testing & QA",
+    "description": "Membangun automated test dengan logging langkah demi langkah, screenshot on failure, dan video recording untuk debugging yang lebih cepat dan confident.",
+    "features": ["Step-by-Step Logging", "Screenshot On Failure", "Video Recording", "Trace Viewer Debugging", "CI/CD Integration"]
   }
 ]

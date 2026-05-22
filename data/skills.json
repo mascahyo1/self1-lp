@@ -33,6 +33,16 @@
       ]
     },
     {
+      "name": "Testing & QA",
+      "icon": "fa-solid fa-vial",
+      "skills": [
+        { "name": "Playwright", "level": 65, "icon": "fa-solid fa-play" },
+        { "name": "Cypress", "level": 50, "icon": "fa-brands fa-c" },
+        { "name": "Jest", "level": 40, "icon": "fa-solid fa-check" },
+        { "name": "Vitest", "level": 45, "icon": "fa-solid fa-bolt" }
+      ]
+    },
+    {
       "name": "Tools & Lainnya",
       "icon": "fa-solid fa-wrench",
       "skills": [
