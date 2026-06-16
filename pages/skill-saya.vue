@@ -25,6 +25,7 @@
           <div
             v-for="category in filteredCategories"
             :key="category.name"
+            v-reveal.up
           >
             <!-- Category Header -->
             <div class="flex items-center gap-3 mb-6">
@@ -37,9 +38,11 @@
             <!-- Skills Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div
-                v-for="skill in category.skills"
+                v-for="(skill, i) in category.skills"
                 :key="skill.name"
-                class="card group"
+                v-reveal.up
+                :class="`reveal-delay-${(i % 3 + 1) * 100}`"
+                class="card-interactive group bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-5"
               >
                 <div class="flex items-center justify-between mb-3">
                   <div class="flex items-center gap-3">
@@ -75,14 +78,18 @@
     <!-- Tech Stack Cloud -->
     <section class="py-16 bg-gray-50 dark:bg-gray-900">
       <div class="section-container text-center">
-        <h2 class="section-title">Tech Stack Favorit</h2>
-        <p class="section-subtitle mb-10">Kombinasi teknologi yang paling sering saya gunakan</p>
+        <h2 v-reveal.up class="section-title">Tech Stack Favorit</h2>
+        <p v-reveal.fade class="section-subtitle mb-10">Kombinasi teknologi yang paling sering saya gunakan</p>
         <div class="flex flex-wrap justify-center gap-3">
           <span
-            v-for="tech in allSkills"
+            v-for="(tech, i) in allSkills"
             :key="tech.name"
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-700 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-200 cursor-default"
-            :class="tech.level >= 85 ? 'border-primary-200 dark:border-primary-900' : ''"
+            v-reveal.zoom
+            :class="[
+              'reveal-delay-' + ((i % 6) * 100),
+              'inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary-300 dark:hover:border-primary-700 hover:text-primary-600 dark:hover:text-primary-400 hover:-translate-y-0.5 transition-all duration-200 cursor-default',
+              tech.level >= 85 ? 'border-primary-200 dark:border-primary-900' : ''
+            ]"
           >
             <fa :icon="tech.icon" class="text-sm" />
             <span class="text-sm font-medium">{{ tech.name }}</span>

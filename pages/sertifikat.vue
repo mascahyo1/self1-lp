@@ -22,8 +22,12 @@
         <div class="flex flex-wrap gap-2 mb-10 justify-center">
           <button
             @click="activeFilter = ''"
-            :class="activeFilter === '' ? 'bg-primary-600 text-white' : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700 hover:border-primary-300'"
-            class="px-4 py-1.5 rounded-full text-sm font-medium transition-all"
+            :class="[
+              'px-4 py-1.5 rounded-full text-sm font-medium transition-all',
+              activeFilter === ''
+                ? 'bg-primary-600 text-white'
+                : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700 hover:border-primary-300'
+            ]"
           >
             Semua ({{ certificates.length }})
           </button>
@@ -31,8 +35,12 @@
             v-for="tag in allTags"
             :key="tag"
             @click="activeFilter = tag"
-            :class="activeFilter === tag ? 'bg-primary-600 text-white' : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700 hover:border-primary-300'"
-            class="px-4 py-1.5 rounded-full text-sm font-medium transition-all"
+            :class="[
+              'px-4 py-1.5 rounded-full text-sm font-medium transition-all',
+              activeFilter === tag
+                ? 'bg-primary-600 text-white'
+                : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700 hover:border-primary-300'
+            ]"
           >
             {{ tag }}
           </button>
@@ -42,9 +50,11 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <TransitionGroup name="list">
             <div
-              v-for="cert in filteredCertificates"
+              v-for="(cert, i) in filteredCertificates"
               :key="cert.id"
-              class="card group hover:-translate-y-1"
+              v-reveal.up
+              :class="`reveal-delay-${((i % 3) + 1) * 100}`"
+              class="card-interactive group bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6"
             >
               <!-- Header -->
               <div class="flex items-start justify-between mb-4">

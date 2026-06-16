@@ -16,16 +16,18 @@
 
           <div class="space-y-8">
             <div
-              v-for="edu in education"
+              v-for="(edu, i) in education"
               :key="edu.id"
+              v-reveal.left
+              :class="`reveal-delay-${(i + 1) * 100}`"
               class="relative sm:pl-16"
             >
               <!-- Timeline Dot -->
-              <div class="hidden sm:flex absolute left-0 top-6 w-12 h-12 rounded-full bg-primary-600 items-center justify-center text-white shadow-lg shadow-primary-200 dark:shadow-primary-900">
+              <div class="hidden sm:flex absolute left-0 top-6 w-12 h-12 rounded-full bg-primary-600 items-center justify-center text-white shadow-lg shadow-primary-200 dark:shadow-primary-900 animate-pulse-slow">
                 <fa icon="fa-solid fa-graduation-cap" />
               </div>
 
-              <div class="card">
+              <div class="card-interactive bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6">
                 <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                   <div>
                     <h3 class="text-xl font-bold text-gray-900 dark:text-white">{{ edu.degree }}</h3>

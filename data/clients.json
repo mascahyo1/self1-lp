@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Maju Jaya", "initials": "MJ" },
+  { "id": 2, "name": "Sentosa Group", "initials": "SG" },
+  { "id": 3, "name": "Toko XYZ", "initials": "XY" },
+  { "id": 4, "name": "Klinik Sehat", "initials": "KS" },
+  { "id": 5, "name": "TechID", "initials": "TI" },
+  { "id": 6, "name": "CV Berkah", "initials": "CB" },
+  { "id": 7, "name": "PT Mitra", "initials": "PM" },
+  { "id": 8, "name": "Studio One", "initials": "SO" }
+]

@@ -5,6 +5,12 @@
       ? 'bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800'
       : 'bg-transparent'"
   >
+    <!-- Scroll progress bar -->
+    <div
+      class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-500 via-violet-500 to-pink-500 transition-[width] duration-150 ease-out"
+      :style="{ width: scrollProgress + '%' }"
+    />
+
     <div class="section-container">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -121,6 +127,7 @@ const colorMode = useColorMode()
 
 const scrolled = ref(false)
 const mobileOpen = ref(false)
+const scrollProgress = ref(0)
 
 const isDark = computed(() => colorMode.value === 'dark')
 
@@ -148,11 +155,23 @@ function toggleColorMode() {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
 
+function updateScrollProgress() {
+  const doc = document.documentElement
+  const max = doc.scrollHeight - doc.clientHeight
+  scrollProgress.value = max > 0 ? (window.scrollY / max) * 100 : 0
+}
+
 onMounted(() => {
   const handleScroll = () => {
     scrolled.value = window.scrollY > 20
+    updateScrollProgress()
   }
-  window.addEventListener('scroll', handleScroll)
-  onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+  handleScroll()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  window.addEventListener('resize', updateScrollProgress, { passive: true })
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('resize', updateScrollProgress)
+  })
 })
 </script>

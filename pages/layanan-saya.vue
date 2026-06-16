@@ -11,9 +11,11 @@
       <div class="section-container">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div
-            v-for="service in services"
+            v-for="(service, i) in services"
             :key="service.id"
-            class="card group hover:-translate-y-1"
+            v-reveal.up
+            :class="`reveal-delay-${((i % 2) + 1) * 150}`"
+            class="card-interactive group bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6"
           >
             <div class="flex items-start gap-4">
               <div class="w-14 h-14 rounded-2xl bg-primary-100 dark:bg-primary-950 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0 text-2xl group-hover:bg-primary-600 group-hover:text-white dark:group-hover:bg-primary-600 transition-all duration-300">
@@ -42,7 +44,7 @@
     <!-- Process -->
     <section class="py-16 bg-gray-50 dark:bg-gray-900">
       <div class="section-container">
-        <div class="text-center mb-12">
+        <div v-reveal.up class="text-center mb-12">
           <h2 class="section-title">Cara Kerja Saya</h2>
           <p class="section-subtitle">Proses terstruktur untuk memastikan hasil terbaik</p>
         </div>
@@ -50,7 +52,9 @@
           <div
             v-for="(step, i) in processSteps"
             :key="step.title"
-            class="card text-center relative"
+            v-reveal.up
+            :class="`reveal-delay-${(i + 1) * 150}`"
+            class="card-interactive text-center relative bg-white dark:bg-gray-950 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6"
           >
             <div class="absolute -top-3 left-6 w-7 h-7 rounded-full bg-primary-600 text-white text-sm font-bold flex items-center justify-center">
               {{ i + 1 }}

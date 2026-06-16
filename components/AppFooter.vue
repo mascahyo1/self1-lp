@@ -1,9 +1,12 @@
 <template>
-  <footer class="bg-gray-950 text-gray-400 py-12 mt-20">
+  <footer class="bg-gray-950 text-gray-400 py-12 mt-20 relative overflow-hidden">
+    <!-- Decorative gradient -->
+    <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent" />
+
     <div class="section-container">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <!-- Brand -->
-        <div>
+        <div v-reveal.up>
           <div class="flex items-center gap-2 mb-3">
             <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold text-sm">
               {{ initials }}
@@ -14,11 +17,12 @@
         </div>
 
         <!-- Quick Links -->
-        <div>
+        <div v-reveal.up.delay-100>
           <h4 class="text-white font-semibold mb-3">Halaman</h4>
           <ul class="space-y-2">
             <li v-for="link in quickLinks" :key="link.to">
-              <NuxtLink :to="link.to" class="text-sm hover:text-primary-400 transition-colors">
+              <NuxtLink :to="link.to" class="text-sm hover:text-primary-400 transition-colors inline-flex items-center gap-1 group">
+                <span class="w-0 h-px bg-primary-400 transition-all duration-300 group-hover:w-3" />
                 {{ link.label }}
               </NuxtLink>
             </li>
@@ -26,7 +30,7 @@
         </div>
 
         <!-- Contact -->
-        <div>
+        <div v-reveal.up.delay-200>
           <h4 class="text-white font-semibold mb-3">Kontak</h4>
           <ul class="space-y-2 text-sm">
             <li class="flex items-center gap-2">
@@ -51,7 +55,7 @@
               :href="url"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-8 h-8 rounded-lg bg-gray-800 hover:bg-primary-600 flex items-center justify-center transition-colors"
+              class="w-9 h-9 rounded-lg bg-gray-800 hover:bg-primary-600 hover:scale-110 flex items-center justify-center transition-all duration-300"
             >
               <fa :icon="`fa-brands fa-${key}`" class="text-sm" />
             </a>
@@ -59,11 +63,11 @@
         </div>
       </div>
 
-      <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+      <div v-reveal.fade class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
         <p>&copy; {{ new Date().getFullYear() }} {{ profile.name }}. Hak cipta dilindungi.</p>
         <p class="flex items-center gap-1">
           Dibuat dengan
-          <fa icon="fa-solid fa-heart" class="text-red-500" />
+          <fa icon="fa-solid fa-heart" class="text-red-500 animate-pulse-slow" />
           menggunakan Nuxt.js & Tailwind CSS
         </p>
       </div>

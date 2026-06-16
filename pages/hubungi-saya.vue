@@ -11,7 +11,7 @@
       <div class="section-container">
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
           <!-- Contact Info (2/5) -->
-          <div class="lg:col-span-2 space-y-6">
+          <div v-reveal.left class="lg:col-span-2 space-y-6">
             <div>
               <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Senang berkenalan!</h2>
               <p class="text-gray-500 dark:text-gray-400 leading-relaxed">
@@ -23,9 +23,10 @@
             <div class="space-y-4">
               <a
                 :href="`mailto:${profile.email}`"
-                class="card flex items-center gap-4 hover:-translate-y-0.5 group"
+                v-reveal.up
+                class="card-interactive flex items-center gap-4 group bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-5"
               >
-                <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-950 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0 group-hover:bg-primary-600 group-hover:text-white transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-950 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0 group-hover:bg-primary-600 group-hover:text-white group-hover:scale-110 transition-all duration-300">
                   <fa icon="fa-solid fa-envelope" class="text-xl" />
                 </div>
                 <div>
@@ -36,9 +37,10 @@
 
               <a
                 :href="`tel:${profile.phone}`"
-                class="card flex items-center gap-4 hover:-translate-y-0.5 group"
+                v-reveal.up.delay-100
+                class="card-interactive flex items-center gap-4 group bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-5"
               >
-                <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-950 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0 group-hover:bg-primary-600 group-hover:text-white transition-all duration-300">
+                <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-950 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0 group-hover:bg-primary-600 group-hover:text-white group-hover:scale-110 transition-all duration-300">
                   <fa icon="fa-solid fa-phone" class="text-xl" />
                 </div>
                 <div>
@@ -47,7 +49,7 @@
                 </div>
               </a>
 
-              <div class="card flex items-center gap-4">
+              <div v-reveal.up.delay-200 class="card-interactive flex items-center gap-4 bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-5">
                 <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-950 flex items-center justify-center text-primary-600 dark:text-primary-400 flex-shrink-0">
                   <fa icon="fa-solid fa-location-dot" class="text-xl" />
                 </div>
@@ -59,7 +61,7 @@
             </div>
 
             <!-- Social -->
-            <div>
+            <div v-reveal.fade.delay-300>
               <p class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Temukan saya di:</p>
               <div class="flex flex-wrap gap-2">
                 <a
@@ -68,7 +70,7 @@
                   :href="url"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-950 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-all text-sm font-medium"
+                  class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-primary-100 dark:hover:bg-primary-950 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 hover:-translate-y-0.5 transition-all text-sm font-medium"
                 >
                   <fa :icon="`fa-brands fa-${key}`" />
                   <span class="capitalize">{{ key }}</span>
@@ -78,8 +80,8 @@
           </div>
 
           <!-- Contact Form (3/5) -->
-          <div class="lg:col-span-3">
-            <div class="card">
+          <div v-reveal.right class="lg:col-span-3">
+            <div class="card-interactive bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6 md:p-8">
               <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Kirim Pesan</h3>
 
               <form @submit.prevent="submitForm" class="space-y-5">

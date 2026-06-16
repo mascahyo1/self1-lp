@@ -10,15 +10,19 @@
     <section class="py-16">
       <div class="section-container">
         <!-- Search + Filter -->
-        <div class="flex flex-col sm:flex-row gap-3 mb-8">
+        <div v-reveal.fade class="flex flex-col sm:flex-row gap-3 mb-8">
           <div class="flex-1">
             <SearchInput v-model="search" placeholder="Cari proyek, teknologi, kategori..." />
           </div>
           <div class="flex flex-wrap gap-2">
             <button
               @click="activeFilter = ''"
-              :class="activeFilter === '' ? 'bg-primary-600 text-white' : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700'"
-              class="px-4 py-2.5 rounded-xl text-sm font-medium transition-all hover:border-primary-300 whitespace-nowrap"
+              :class="[
+                'px-4 py-2.5 rounded-xl text-sm font-medium transition-all hover:border-primary-300 whitespace-nowrap',
+                activeFilter === ''
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700'
+              ]"
             >
               Semua
             </button>
@@ -26,8 +30,12 @@
               v-for="cat in categories"
               :key="cat"
               @click="activeFilter = cat"
-              :class="activeFilter === cat ? 'bg-primary-600 text-white' : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700'"
-              class="px-4 py-2.5 rounded-xl text-sm font-medium transition-all hover:border-primary-300 whitespace-nowrap"
+              :class="[
+                'px-4 py-2.5 rounded-xl text-sm font-medium transition-all hover:border-primary-300 whitespace-nowrap',
+                activeFilter === cat
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700'
+              ]"
             >
               {{ cat }}
             </button>
@@ -35,7 +43,7 @@
         </div>
 
         <!-- Result count -->
-        <p v-if="search" class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+        <p v-if="search" v-reveal.fade class="text-sm text-gray-500 dark:text-gray-400 mb-6">
           Menampilkan <span class="font-semibold text-gray-900 dark:text-white">{{ filteredPortfolio.length }}</span>
           hasil untuk "<span class="text-primary-600 dark:text-primary-400">{{ search }}</span>"
         </p>
@@ -44,10 +52,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <TransitionGroup name="list">
             <NuxtLink
-              v-for="project in filteredPortfolio"
+              v-for="(project, i) in filteredPortfolio"
               :key="project.id"
               :to="`/portfolio/${project.slug}`"
-              class="card overflow-hidden p-0 group block hover:-translate-y-1"
+              v-reveal.up
+              :class="`reveal-delay-${((i % 3) + 1) * 100}`"
+              class="card-interactive overflow-hidden p-0 group block bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800"
             >
               <!-- Image -->
               <div class="h-48 bg-gradient-to-br relative overflow-hidden flex items-center justify-center"

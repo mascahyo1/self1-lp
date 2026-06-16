@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "category": "Layanan",
+    "question": "Layanan apa saja yang Anda tawarkan?",
+    "answer": "Saya menawarkan layanan Web Development (full-stack dengan Laravel/Vue/Nuxt), Pengembangan ERP & Sistem Internal, RESTful API & Integrasi pihak ketiga, IT Consulting & Technical Lead, serta Automated Testing & QA."
+  },
+  {
+    "id": 2,
+    "category": "Harga",
+    "question": "Berapa biaya untuk satu proyek?",
+    "answer": "Biaya sangat bergantung pada scope, kompleksitas, dan durasi proyek. Untuk landing page sederhana mulai dari 3 juta, sistem ERP bisa 15–100+ juta. Saya selalu siapkan proposal detail dengan breakdown yang transparan setelah konsultasi awal."
+  },
+  {
+    "id": 3,
+    "category": "Proses",
+    "question": "Bagaimana alur kerja sama dengan Anda?",
+    "answer": "Alurnya: (1) Konsultasi gratis untuk memahami kebutuhan, (2) Perencanaan & proposal teknis, (3) Development dengan update progress berkala, (4) Testing & review bareng client, (5) Deployment & handover, (6) Support pasca-launch."
+  },
+  {
+    "id": 4,
+    "category": "Waktu",
+    "question": "Berapa lama pengerjaan satu proyek?",
+    "answer": "Tergantung scope: landing page 1–2 minggu, web app 1–3 bulan, ERP 3–6 bulan. Saya akan kasih estimasi realistis di proposal dan update progress secara berkala."
+  },
+  {
+    "id": 5,
+    "category": "Garansi",
+    "question": "Apakah ada garansi setelah proyek selesai?",
+    "answer": "Ya. Setiap proyek include garansi bug-fix gratis selama 30 hari setelah launch. Tersedia juga paket maintenance bulanan untuk update, penambahan fitur, dan monitoring."
+  },
+  {
+    "id": 6,
+    "category": "Support",
+    "question": "Bagaimana sistem support setelah proyek selesai?",
+    "answer": "Saya bisa dihubungi via WhatsApp, email, atau platform komunikasi pilihan Anda. Response time: weekdays < 12 jam, weekends < 24 jam. Untuk klien retainer, response time lebih cepat lagi."
+  },
+  {
+    "id": 7,
+    "category": "Teknologi",
+    "question": "Tech stack apa yang biasa Anda gunakan?",
+    "answer": "Backend: PHP (Laravel, CodeIgniter), Node.js, MySQL/PostgreSQL. Frontend: Vue.js, Nuxt.js, Tailwind CSS, Flowbite. Mobile: React Native, Flutter. DevOps: Docker, CI/CD, VPS/Cloud hosting."
+  },
+  {
+    "id": 8,
+    "category": "Lokasi",
+    "question": "Apakah bisa kerja remote? Dan apakah bisa onsite?",
+    "answer": "Bisa keduanya. Remote (default) — komunikasi via Zoom/Meet/WhatsApp, daily standup opsional, project management di Trello/Notion. Onsite — tersedia untuk area Ngawi, Madiun, Solo, dan sekitarnya dengan biaya akomodasi terpisah."
+  }
+]

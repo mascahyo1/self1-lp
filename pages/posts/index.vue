@@ -10,22 +10,26 @@
     <section class="py-16">
       <div class="section-container">
         <!-- Search -->
-        <div class="max-w-lg mx-auto mb-6">
+        <div v-reveal.fade class="max-w-lg mx-auto mb-6">
           <SearchInput v-model="search" placeholder="Cari judul, kategori, tag..." />
         </div>
 
         <!-- Result hint -->
-        <p v-if="search" class="text-sm text-center text-gray-500 dark:text-gray-400 mb-6">
+        <p v-if="search" v-reveal.fade class="text-sm text-center text-gray-500 dark:text-gray-400 mb-6">
           <span class="font-semibold text-gray-900 dark:text-white">{{ filteredPosts.length }}</span>
           hasil untuk "<span class="text-primary-600 dark:text-primary-400">{{ search }}</span>"
         </p>
 
         <!-- Filter -->
-        <div class="flex flex-wrap gap-2 mb-10 justify-center">
+        <div v-reveal.fade class="flex flex-wrap gap-2 mb-10 justify-center">
           <button
             @click="activeFilter = ''"
-            :class="activeFilter === '' ? 'bg-primary-600 text-white' : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700'"
-            class="px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:border-primary-300"
+            :class="[
+              'px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:border-primary-300',
+              activeFilter === ''
+                ? 'bg-primary-600 text-white'
+                : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700'
+            ]"
           >
             Semua ({{ posts.length }})
           </button>
@@ -33,16 +37,20 @@
             v-for="cat in categories"
             :key="cat"
             @click="activeFilter = cat"
-            :class="activeFilter === cat ? 'bg-primary-600 text-white' : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700'"
-            class="px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:border-primary-300"
+            :class="[
+              'px-4 py-1.5 rounded-full text-sm font-medium transition-all hover:border-primary-300',
+              activeFilter === cat
+                ? 'bg-primary-600 text-white'
+                : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700'
+            ]"
           >
             {{ cat }}
           </button>
         </div>
 
         <!-- Featured Post -->
-        <div v-if="!activeFilter && featuredPost" class="mb-10">
-          <NuxtLink :to="`/posts/${featuredPost.slug}`" class="card overflow-hidden p-0 group block hover:-translate-y-1">
+        <div v-if="!activeFilter && featuredPost" v-reveal.zoom class="mb-10">
+          <NuxtLink :to="`/posts/${featuredPost.slug}`" class="card-interactive overflow-hidden p-0 group block bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
             <div class="grid grid-cols-1 md:grid-cols-2">
               <div class="h-56 md:h-auto bg-gradient-to-br from-primary-500 to-indigo-600 relative flex items-center justify-center">
                 <fa icon="fa-solid fa-pen-nib" class="text-7xl text-white/20" />
@@ -86,10 +94,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <TransitionGroup name="list">
             <NuxtLink
-              v-for="post in filteredPosts"
+              v-for="(post, i) in filteredPosts"
               :key="post.id"
               :to="`/posts/${post.slug}`"
-              class="card overflow-hidden p-0 group block hover:-translate-y-1"
+              v-reveal.up
+              :class="`reveal-delay-${((i % 3) + 1) * 100}`"
+              class="card-interactive overflow-hidden p-0 group block bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800"
             >
               <!-- Cover -->
               <div class="h-44 bg-gradient-to-br relative flex items-center justify-center overflow-hidden"

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Budi Santoso",
+    "role": "Owner",
+    "company": "CV Maju Jaya",
+    "initials": "BS",
+    "rating": 5,
+    "message": "Pelayanan cepat dan hasil sesuai ekspektasi. Sistem ERP yang dibangun sangat membantu operasional harian. Komunikasi responsif dan selalu siap berdiskusi.",
+    "color": "from-primary-500 to-indigo-500"
+  },
+  {
+    "id": 2,
+    "name": "Siti Rahmawati",
+    "role": "HR Manager",
+    "company": "PT Sentosa Group",
+    "initials": "SR",
+    "rating": 5,
+    "message": "Implementasi modul HR & Payroll berjalan mulus. Tim jadi lebih efisien, penggajian tepat waktu, dan reporting-nya detail. Recommended!",
+    "color": "from-emerald-500 to-teal-500"
+  },
+  {
+    "id": 3,
+    "name": "Ahmad Fauzi",
+    "role": "Founder",
+    "company": "Toko Online XYZ",
+    "initials": "AF",
+    "rating": 5,
+    "message": "Website toko online yang dibangun responsif, cepat, dan mudah dikelola. Sejak pakai sistem baru, konversi naik 35%. Mantap!",
+    "color": "from-orange-500 to-rose-500"
+  },
+  {
+    "id": 4,
+    "name": "Dewi Lestari",
+    "role": "Operational Manager",
+    "company": "Klinik Sehat Sentosa",
+    "initials": "DL",
+    "rating": 5,
+    "message": "Sistem antrian dan rekam medis digital yang dibuat sangat membantu pasien dan staff. User-friendly dan minim learning curve.",
+    "color": "from-violet-500 to-purple-500"
+  },
+  {
+    "id": 5,
+    "name": "Riko Pratama",
+    "role": "CTO",
+    "company": "Startup TechID",
+    "initials": "RP",
+    "rating": 5,
+    "message": "Kerja sama membangun REST API sangat profesional. Dokumentasi lengkap, code bersih, dan arsitektur scalable. Akan pakai lagi untuk project berikutnya.",
+    "color": "from-sky-500 to-blue-500"
+  }
+]

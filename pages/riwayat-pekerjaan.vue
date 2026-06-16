@@ -26,18 +26,20 @@
 
           <div class="space-y-8">
             <div
-              v-for="exp in filteredExperience"
+              v-for="(exp, i) in filteredExperience"
               :key="exp.id"
+              v-reveal.left
+              :class="`reveal-delay-${(i + 1) * 100}`"
               class="relative sm:pl-20"
             >
               <!-- Timeline Icon -->
               <div class="hidden sm:flex absolute left-0 top-6 w-12 h-12 rounded-full flex-shrink-0 items-center justify-center text-white shadow-lg"
-                :class="exp.is_current ? 'bg-primary-600 shadow-primary-200 dark:shadow-primary-900' : 'bg-gray-400 dark:bg-gray-600'"
+                :class="exp.is_current ? 'bg-primary-600 shadow-primary-200 dark:shadow-primary-900 animate-pulse-slow' : 'bg-gray-400 dark:bg-gray-600'"
               >
                 <fa :icon="exp.company_logo" />
               </div>
 
-              <div class="card">
+              <div class="card-interactive bg-white dark:bg-gray-900 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6">
                 <!-- Header -->
                 <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                   <div>
