@@ -15,9 +15,11 @@
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center gap-2 group">
-          <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold text-sm group-hover:bg-primary-700 transition-colors">
-            {{ initials }}
-          </div>
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            class="w-9 h-9 rounded-lg object-contain group-hover:scale-105 transition-transform duration-300"
+          />
           <span class="font-bold text-gray-900 dark:text-white hidden sm:block">{{ profile.name.split(' ')[0] }}</span>
         </NuxtLink>
 
@@ -130,10 +132,6 @@ const mobileOpen = ref(false)
 const scrollProgress = ref(0)
 
 const isDark = computed(() => colorMode.value === 'dark')
-
-const initials = computed(() =>
-  profile.name.split(' ').slice(0, 2).map((w: string) => w[0]).join('')
-)
 
 const navLinks = [
   { to: '/', label: 'Beranda' },

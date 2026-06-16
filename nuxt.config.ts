@@ -22,7 +22,8 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       htmlAttrs: { lang: 'id' },
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', href: '/images/logo.png' },
+        { rel: 'apple-touch-icon', href: '/images/logo.png' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
       ],
@@ -30,6 +31,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#6366f1' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
+        { property: 'og:image', content: '/images/logo.png' },
       ],
     },
   },

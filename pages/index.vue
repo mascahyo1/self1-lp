@@ -2,11 +2,11 @@
   <div>
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-950 dark:to-indigo-950">
-      <!-- Background Decoration -->
+      <!-- Background Decoration (with parallax) -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary-200/30 dark:bg-primary-900/20 blur-3xl animate-float" />
-        <div class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-indigo-200/30 dark:bg-indigo-900/20 blur-3xl animate-float-slow" />
-        <div class="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-pink-200/20 dark:bg-pink-900/10 blur-3xl animate-float" style="animation-delay: -4s" />
+        <div :style="heroBlob1.style" class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary-200/30 dark:bg-primary-900/20 blur-3xl animate-float" />
+        <div :style="heroBlob2.style" class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-indigo-200/30 dark:bg-indigo-900/20 blur-3xl animate-float-slow" />
+        <div :style="heroBlob3.style" class="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-pink-200/20 dark:bg-pink-900/10 blur-3xl animate-float" style="animation-delay: -4s" />
       </div>
 
       <div class="section-container relative z-10 py-20">
@@ -69,19 +69,21 @@
 
           <!-- Right: Avatar + Stats -->
           <div class="flex flex-col items-center gap-8">
-            <!-- Avatar -->
-            <div
-              v-reveal.zoom
-              class="w-56 lg:w-72 rounded-3xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800 ring-4 ring-white/40 dark:ring-gray-800/40"
-            >
-              <img
-                v-if="avatarSrc"
-                :src="avatarSrc"
-                :alt="profile.name"
-                class="w-full h-auto block"
-              />
-              <div v-else class="w-full h-auto min-h-[16rem] flex items-center justify-center">
-                <fa icon="fa-solid fa-user" class="text-7xl text-gray-400 dark:text-gray-600" />
+            <!-- Avatar (with mouse-parallax 3D tilt) -->
+            <div v-reveal.zoom class="perspective-1000">
+              <div
+                :style="avatarTilt"
+                class="w-56 lg:w-72 rounded-3xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800 ring-4 ring-white/40 dark:ring-gray-800/40 will-change-transform transition-transform duration-500"
+              >
+                <img
+                  v-if="avatarSrc"
+                  :src="avatarSrc"
+                  :alt="profile.name"
+                  class="w-full h-auto block"
+                />
+                <div v-else class="w-full h-auto min-h-[16rem] flex items-center justify-center">
+                  <fa icon="fa-solid fa-user" class="text-7xl text-gray-400 dark:text-gray-600" />
+                </div>
               </div>
             </div>
 
@@ -199,7 +201,7 @@
     <!-- Why Choose Me -->
     <section class="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
       <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div class="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary-200/20 dark:bg-primary-900/10 blur-3xl" />
+        <div :style="whyBlob.style" class="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary-200/20 dark:bg-primary-900/10 blur-3xl" />
       </div>
       <div class="section-container relative z-10">
         <div v-reveal.up class="text-center mb-12">
@@ -400,7 +402,7 @@
     <!-- Testimonials -->
     <section class="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
       <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div class="absolute top-1/2 -right-32 w-96 h-96 rounded-full bg-pink-200/20 dark:bg-pink-900/10 blur-3xl" />
+        <div :style="testimonialBlob.style" class="absolute top-1/2 -right-32 w-96 h-96 rounded-full bg-pink-200/20 dark:bg-pink-900/10 blur-3xl" />
       </div>
       <div class="section-container relative z-10">
         <div v-reveal.up class="text-center mb-12">
@@ -603,6 +605,22 @@ const faqs = useFaqs()
 const clients = useClients()
 
 const featuredPortfolio = computed(() => portfolio.filter((p: any) => p.featured).slice(0, 3))
+
+// === Parallax effects ===
+// Hero: 3 blobs react to mouse with different strengths/depths
+const heroBlob1 = useMouseParallax({ strength: 0.05, max: 35 })
+const heroBlob2 = useMouseParallax({ strength: 0.04, max: 30, invert: true })
+const heroBlob3 = useMouseParallax({ strength: 0.08, max: 50 })
+
+// Hero avatar: 3D tilt based on cursor (computed rotateX/rotateY)
+const { x: avX, y: avY } = useMouseParallax({ strength: 0.015, max: 12 })
+const avatarTilt = computed(() => ({
+  transform: `rotateY(${avX.value.toFixed(2)}deg) rotateX(${(avY.value * -1).toFixed(2)}deg)`,
+}))
+
+// Section backgrounds: slow scroll parallax (background decoration)
+const whyBlob = useScrollParallax({ speed: 0.25, max: 150 })
+const testimonialBlob = useScrollParallax({ speed: 0.2, max: 120 })
 
 const allSkills = computed(() =>
   skills.categories.flatMap((c: any) => c.skills).sort((a: any, b: any) => b.level - a.level).slice(0, 12)

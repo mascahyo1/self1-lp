@@ -8,9 +8,11 @@
         <!-- Brand -->
         <div v-reveal.up>
           <div class="flex items-center gap-2 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold text-sm">
-              {{ initials }}
-            </div>
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              class="w-9 h-9 rounded-lg object-contain"
+            />
             <span class="font-bold text-white">{{ profile.name }}</span>
           </div>
           <p class="text-sm leading-relaxed">{{ profile.tagline }}</p>
@@ -77,10 +79,6 @@
 
 <script setup lang="ts">
 const profile = useProfile()
-
-const initials = computed(() =>
-  profile.name.split(' ').slice(0, 2).map((w: string) => w[0]).join('')
-)
 
 const quickLinks = [
   { to: '/', label: 'Beranda' },
