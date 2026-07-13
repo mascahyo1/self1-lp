@@ -443,9 +443,18 @@
     </section>
 
     <!-- Client Logos Marquee -->
-    <section class="py-12 bg-white dark:bg-gray-950 border-y border-gray-100 dark:border-gray-800 overflow-hidden">
-      <div v-reveal.fade class="text-center mb-8">
-        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Dipercaya oleh berbagai klien</p>
+    <section class="py-16 bg-white dark:bg-gray-950 border-y border-gray-100 dark:border-gray-800 overflow-hidden">
+      <div v-reveal.fade class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-950 text-primary-700 dark:text-primary-300 text-sm font-medium mb-3">
+          <fa icon="fa-solid fa-shield-halved" />
+          Social Proof
+        </div>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+          Dipercaya oleh berbagai klien
+        </h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+          Dari UMKM hingga perusahaan nasional — saya membantu beragam klien mengubah ide menjadi produk digital yang nyata.
+        </p>
       </div>
       <div class="relative">
         <!-- Fade masks -->
@@ -457,6 +466,15 @@
               {{ c.initials }}
             </div>
             <span class="font-semibold text-gray-700 dark:text-gray-300 text-sm whitespace-nowrap">{{ c.name }}</span>
+          </div>
+        </div>
+      </div>
+      <!-- Stats row -->
+      <div v-reveal.up class="section-container mt-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
+          <div v-for="stat in trustStats" :key="stat.label" class="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 text-center shadow-sm">
+            <div class="text-2xl font-bold gradient-text">{{ stat.value }}</div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ stat.label }}</p>
           </div>
         </div>
       </div>
@@ -660,6 +678,13 @@ const processSteps = [
   { icon: 'fa-solid fa-pencil-ruler', title: 'Perencanaan', desc: 'Merancang solusi dan menyiapkan proposal teknis yang detail.' },
   { icon: 'fa-solid fa-code', title: 'Pengembangan', desc: 'Implementasi dengan kode berkualitas tinggi dan update berkala.' },
   { icon: 'fa-solid fa-rocket', title: 'Peluncuran', desc: 'Testing menyeluruh, deployment, dan dukungan pasca-launch.' },
+]
+
+const trustStats = [
+  { value: '15+', label: 'Klien aktif & sebelumnya' },
+  { value: '5+', label: 'Industri berbeda' },
+  { value: '98%', label: 'Tingkat kepuasan' },
+  { value: '24/7', label: 'Dukungan teknis' },
 ]
 
 const doubledClients = computed(() => {
