@@ -399,87 +399,6 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <div :style="testimonialBlob.style" class="absolute top-1/2 -right-32 w-96 h-96 rounded-full bg-pink-200/20 dark:bg-pink-900/10 blur-3xl" />
-      </div>
-      <div class="section-container relative z-10">
-        <div v-reveal.up class="text-center mb-12">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-950 text-primary-700 dark:text-primary-300 text-sm font-medium mb-4">
-            <fa icon="fa-solid fa-quote-left" />
-            Testimoni
-          </div>
-          <h2 class="section-title">Apa Kata Mereka?</h2>
-          <p class="section-subtitle">Cerita dari klien dan kolega yang pernah bekerja bersama</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            v-for="(t, i) in testimonials"
-            :key="t.id"
-            v-reveal.up
-            :class="`reveal-delay-${(i + 1) * 100}`"
-            class="card-interactive bg-white dark:bg-gray-950 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6 flex flex-col"
-          >
-            <div class="flex items-center gap-1 mb-3 text-yellow-400">
-              <fa v-for="n in t.rating" :key="n" icon="fa-solid fa-star" class="text-sm" />
-            </div>
-            <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed flex-1 mb-4">
-              <span class="text-primary-500 text-2xl leading-none">"</span>{{ t.message }}<span class="text-primary-500 text-2xl leading-none">"</span>
-            </p>
-            <div class="flex items-center gap-3 pt-3 border-t border-gray-100 dark:border-gray-800">
-              <div class="w-10 h-10 rounded-full bg-gradient-to-br flex items-center justify-center text-white font-bold text-sm flex-shrink-0" :class="t.color">
-                {{ t.initials }}
-              </div>
-              <div class="min-w-0">
-                <p class="font-semibold text-sm text-gray-900 dark:text-white truncate">{{ t.name }}</p>
-                <p class="text-xs text-gray-500 dark:text-gray-400 truncate">{{ t.role }} · {{ t.company }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Client Logos Marquee -->
-    <section class="py-16 bg-white dark:bg-gray-950 border-y border-gray-100 dark:border-gray-800 overflow-hidden">
-      <div v-reveal.fade class="text-center mb-10">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-950 text-primary-700 dark:text-primary-300 text-sm font-medium mb-3">
-          <fa icon="fa-solid fa-shield-halved" />
-          Social Proof
-        </div>
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
-          Dipercaya oleh berbagai klien
-        </h2>
-        <p class="text-sm text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
-          Dari UMKM hingga perusahaan nasional — saya membantu beragam klien mengubah ide menjadi produk digital yang nyata.
-        </p>
-      </div>
-      <div class="relative">
-        <!-- Fade masks -->
-        <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
-        <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white dark:from-gray-950 to-transparent z-10 pointer-events-none" />
-        <div class="marquee-track">
-          <div v-for="c in doubledClients" :key="c.id + '-' + c.idx" class="flex items-center gap-3 px-6 py-3 mx-3 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 flex-shrink-0">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-indigo-500 flex items-center justify-center text-white font-bold text-xs">
-              {{ c.initials }}
-            </div>
-            <span class="font-semibold text-gray-700 dark:text-gray-300 text-sm whitespace-nowrap">{{ c.name }}</span>
-          </div>
-        </div>
-      </div>
-      <!-- Stats row -->
-      <div v-reveal.up class="section-container mt-10">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
-          <div v-for="stat in trustStats" :key="stat.label" class="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 text-center shadow-sm">
-            <div class="text-2xl font-bold gradient-text">{{ stat.value }}</div>
-            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ stat.label }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Latest Posts -->
     <section class="py-20 bg-gray-50 dark:bg-gray-900">
       <div class="section-container">
@@ -618,9 +537,7 @@ const portfolio = usePortfolio()
 const skills = useSkills()
 const experience = useExperience()
 const posts = usePosts()
-const testimonials = useTestimonials()
 const faqs = useFaqs()
-const clients = useClients()
 
 const featuredPortfolio = computed(() => portfolio.filter((p: any) => p.featured).slice(0, 3))
 
@@ -638,7 +555,6 @@ const avatarTilt = computed(() => ({
 
 // Section backgrounds: slow scroll parallax (background decoration)
 const whyBlob = useScrollParallax({ speed: 0.25, max: 150 })
-const testimonialBlob = useScrollParallax({ speed: 0.2, max: 120 })
 
 const allSkills = computed(() =>
   skills.categories.flatMap((c: any) => c.skills).sort((a: any, b: any) => b.level - a.level).slice(0, 12)
@@ -679,21 +595,6 @@ const processSteps = [
   { icon: 'fa-solid fa-code', title: 'Pengembangan', desc: 'Implementasi dengan kode berkualitas tinggi dan update berkala.' },
   { icon: 'fa-solid fa-rocket', title: 'Peluncuran', desc: 'Testing menyeluruh, deployment, dan dukungan pasca-launch.' },
 ]
-
-const trustStats = [
-  { value: '15+', label: 'Klien aktif & sebelumnya' },
-  { value: '5+', label: 'Industri berbeda' },
-  { value: '98%', label: 'Tingkat kepuasan' },
-  { value: '24/7', label: 'Dukungan teknis' },
-]
-
-const doubledClients = computed(() => {
-  // Duplicate 2x for seamless marquee loop
-  const arr: any[] = []
-  clients.forEach((c: any) => arr.push({ ...c, idx: 'a' }))
-  clients.forEach((c: any) => arr.push({ ...c, idx: 'b' }))
-  return arr
-})
 
 const openFaqId = ref<number | null>(null)
 function toggleFaq(id: number) {
