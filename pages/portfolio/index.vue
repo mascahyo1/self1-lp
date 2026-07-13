@@ -63,7 +63,17 @@
               <div class="h-48 bg-gradient-to-br relative overflow-hidden flex items-center justify-center"
                 :class="getGradient(project.id)"
               >
-                <fa icon="fa-solid fa-globe" class="text-6xl text-white/15" />
+                <img
+                  v-if="project.image_main && !imageErrors[project.id]"
+                  :src="project.image_main"
+                  :alt="project.title"
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  @error="imageErrors[project.id] = true"
+                />
+                <div v-else class="absolute inset-0 flex items-center justify-center">
+                  <fa icon="fa-solid fa-globe" class="text-6xl text-white/15" />
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
                 <div class="absolute top-3 left-3">
                   <span class="badge bg-white/20 backdrop-blur-sm text-white text-xs">{{ project.year }}</span>
                 </div>
@@ -132,6 +142,7 @@ const portfolio = usePortfolio()
 
 const search = ref('')
 const activeFilter = ref('')
+const imageErrors = reactive<Record<number, boolean>>({})
 
 const categories = computed(() => {
   const cats = new Set<string>()

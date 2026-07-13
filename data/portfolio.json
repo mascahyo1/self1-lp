@@ -64,23 +64,99 @@
   {
     "id": 4,
     "slug": "landing-page-personal",
-    "title": "Personal Landing Page",
+    "title": "AI-Powered Personal Portfolio",
     "category": "Website",
-    "tags": ["Nuxt.js", "Vue.js", "Tailwind CSS", "Font Awesome", "Flowbite"],
-    "description_short": "Landing page personal yang sedang Anda lihat ini — dibangun dengan Nuxt 3, Tailwind CSS, dark mode, dan data JSON.",
-    "description_full": "Website portfolio personal yang dibangun dengan Nuxt 3 (SPA mode), Tailwind CSS, dan Font Awesome. Semua konten bersifat dinamis dan disimpan dalam format JSON sehingga mudah diperbarui tanpa menyentuh kode Vue.\n\nFitur yang diimplementasikan: dark/light mode dengan default dari preferensi sistem OS, search di semua halaman listing, halaman detail portfolio dengan galeri gambar dan lightbox, halaman posts dengan markdown renderer sederhana, timeline untuk pengalaman kerja dan pendidikan, serta form kontak interaktif.\n\nDibangun dalam satu sesi coding menggunakan Claude Code, di-host di repository GitHub dan siap di-deploy ke Vercel/Netlify.",
-    "image_main": "/images/portfolio/lp-main.jpg",
+    "tags": ["Nuxt.js", "Vue.js", "Tailwind CSS", "MCP Notion", "Plane.so", "AI Workflow"],
+    "description_short": "Portfolio modern dengan workflow AI terintegrasi: request otomatis menjadi task di Plane, progress tervalidasi, lalu terdokumentasi lengkap di Notion.",
+    "description_full": "Website portfolio personal yang dibangun dengan Nuxt 3, Tailwind CSS, dan workflow pengembangan berbantuan AI. Tidak hanya menampilkan karya, proyek ini juga menjadi studi kasus penerapan AI agent dalam siklus pengembangan software yang transparan, terukur, dan terdokumentasi.\n\nSetiap request dari pengguna diterjemahkan AI menjadi requirement dan task terstruktur di Plane.so melalui MCP. Task dilengkapi prioritas, acceptance criteria, label, dan status agar seluruh proses dapat dipantau tanpa kehilangan konteks. Notion digunakan sebagai knowledge base untuk menyimpan keputusan teknis, panduan fitur, hasil pengujian, dan dokumentasi akhir.\n\nAI mengerjakan task sesuai prioritas, menjalankan build dan pengujian, lalu memperbarui status di Plane hanya setelah acceptance criteria terpenuhi. Jika validasi gagal, task tetap berstatus in progress dan temuan dicatat sebagai bagian dari laporan kendala. Alur ini menciptakan jejak pekerjaan yang jelas dari request hingga delivery.\n\nSetelah task dinyatakan passed, AI menyusun dokumentasi lengkap berisi ringkasan implementasi, file yang berubah, hasil validasi, serta screenshot aktual. Laporan progress merangkum pekerjaan selesai, pekerjaan berjalan, blocker, dan rencana berikutnya sehingga stakeholder selalu mendapatkan informasi terbaru.\n\nHasil akhirnya adalah portfolio yang cepat, responsif, mudah dipelihara, sekaligus workflow delivery yang akuntabel. Dark mode, pencarian, galeri screenshot, halaman studi kasus, SEO metadata, dan desain responsif tersedia sebagai bagian dari pengalaman pengguna.",
+    "image_main": "/images/portfolio/personal-homepage.png",
     "images": [
-      "/images/portfolio/lp-1.jpg",
-      "/images/portfolio/lp-2.jpg"
+      "/images/portfolio/personal-portfolio.png",
+      "/images/portfolio/personal-project-detail.png"
     ],
     "url_live": null,
     "url_github": "https://github.com/mascahyo1/self1-lp",
     "featured": true,
     "year": "2026",
     "client": "Personal",
-    "duration": "1 hari",
-    "role": "Full Stack Developer"
+    "duration": "Continuous Delivery",
+    "role": "Full Stack Developer & AI Workflow Designer",
+    "metrics": [
+      { "value": "100%", "label": "Task terlacak" },
+      { "value": "2 MCP", "label": "Integrasi workflow" },
+      { "value": "4 tahap", "label": "Quality gate" },
+      { "value": "Auto", "label": "Laporan progress" }
+    ],
+    "workflow": [
+      {
+        "step": "01",
+        "title": "Request & Discovery",
+        "tool": "Notion MCP",
+        "description": "AI membaca request, menggali konteks, lalu merumuskan scope, requirement, dan acceptance criteria yang dapat diuji."
+      },
+      {
+        "step": "02",
+        "title": "Task Planning",
+        "tool": "Plane.so MCP",
+        "description": "Requirement dipecah menjadi task, diberi prioritas, label, estimasi, serta status agar progress mudah dipantau."
+      },
+      {
+        "step": "03",
+        "title": "Build, Test & Review",
+        "tool": "AI Agent",
+        "description": "AI mengimplementasikan solusi, menjalankan quality gate, dan memperbaiki temuan sampai seluruh kriteria dinyatakan passed."
+      },
+      {
+        "step": "04",
+        "title": "Update & Documentation",
+        "tool": "Plane + Notion",
+        "description": "Task yang lolos validasi ditutup di Plane. Dokumentasi, laporan progress, bukti pengujian, dan screenshot dipublikasikan di Notion."
+      }
+    ],
+    "progress_report": [
+      {
+        "phase": "Discovery & Planning",
+        "status": "Selesai",
+        "progress": 100,
+        "summary": "Scope, arsitektur informasi, backlog, dan acceptance criteria telah disepakati."
+      },
+      {
+        "phase": "UI Development",
+        "status": "Selesai",
+        "progress": 100,
+        "summary": "Halaman utama, portfolio, posts, dark mode, pencarian, dan layout responsif telah diimplementasikan."
+      },
+      {
+        "phase": "MCP Workflow",
+        "status": "Selesai",
+        "progress": 100,
+        "summary": "Alur request, pembuatan task Plane, quality gate, update status, dan dokumentasi Notion telah didefinisikan."
+      },
+      {
+        "phase": "Continuous Improvement",
+        "status": "Berjalan",
+        "progress": 75,
+        "summary": "Optimasi konten, audit aksesibilitas, performa, dan penambahan studi kasus dilakukan secara berkelanjutan."
+      }
+    ],
+    "documentation": [
+      {
+        "title": "Product Requirement Document",
+        "description": "Tujuan, ruang lingkup, user story, acceptance criteria, prioritas, dan definisi selesai."
+      },
+      {
+        "title": "Technical Documentation",
+        "description": "Arsitektur Nuxt, struktur data, komponen, composable, keputusan teknis, serta panduan maintenance."
+      },
+      {
+        "title": "QA & Validation Report",
+        "description": "Checklist quality gate, hasil build, pengujian responsif, accessibility check, dan catatan temuan."
+      },
+      {
+        "title": "Progress & Delivery Report",
+        "description": "Ringkasan task selesai, pekerjaan berjalan, blocker, perubahan utama, screenshot, dan next action."
+      }
+    ]
   },
   {
     "id": 5,

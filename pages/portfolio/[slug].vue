@@ -62,9 +62,27 @@
               </p>
             </div>
 
+            <!-- Project Metrics -->
+            <div v-if="project.metrics?.length" class="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div
+                v-for="metric in project.metrics"
+                :key="metric.label"
+                class="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-4 text-center shadow-sm"
+              >
+                <p class="text-xl md:text-2xl font-bold gradient-text">{{ metric.value }}</p>
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">{{ metric.label }}</p>
+              </div>
+            </div>
+
             <!-- Image Gallery -->
             <div v-if="project.images && project.images.length">
-              <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Galeri</h2>
+              <div class="flex items-end justify-between gap-4 mb-4">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600 dark:text-primary-400 mb-1">Project evidence</p>
+                  <h2 class="text-xl font-bold text-gray-900 dark:text-white">Dokumentasi Visual</h2>
+                </div>
+                <span class="text-xs text-gray-400">{{ project.images.length + 1 }} screenshot</span>
+              </div>
 
               <!-- Main Image -->
               <div
@@ -101,28 +119,28 @@
               </div>
 
               <!-- Thumbnail Row -->
-              <div v-if="project.images.length > 0" class="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                <div
+              <div v-if="project.images.length > 0" class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <button
                   v-for="(img, i) in project.images"
-                  :key="i"
-                  class="aspect-video rounded-xl overflow-hidden cursor-pointer border-2 transition-all"
-                  :class="[
-                    getGradientLight(project.id),
-                    lightboxIndex === i + 1 ? 'border-primary-500' : 'border-transparent hover:border-primary-300'
-                  ]"
+                  :key="img"
+                  type="button"
+                  class="aspect-video rounded-xl overflow-hidden cursor-pointer border-2 transition-all bg-gray-100 dark:bg-gray-800"
+                  :class="lightboxIndex === i + 1 ? 'border-primary-500' : 'border-transparent hover:border-primary-300'"
+                  :aria-label="`Buka screenshot ${i + 2}`"
                   @click="lightboxIndex = i + 1; lightboxOpen = true"
                 >
-                  <div class="w-full h-full flex items-center justify-center">
-                    <fa icon="fa-solid fa-image" class="text-xl text-white/40" />
-                  </div>
-                </div>
+                  <img
+                    :src="img"
+                    :alt="`${project.title} — screenshot ${i + 2}`"
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </button>
               </div>
 
               <!-- Image count info -->
-              <p class="text-xs text-gray-400 mt-2">
-                <fa icon="fa-solid fa-images" class="mr-1" />
-                {{ project.images.length + 1 }} gambar
-                — ganti dengan path gambar sesungguhnya di <code class="bg-gray-100 dark:bg-gray-800 px-1 rounded">data/portfolio.json</code>
+              <p class="text-xs text-gray-400 mt-3 flex items-center gap-1.5">
+                <fa icon="fa-solid fa-circle-info" />
+                Klik screenshot untuk melihat dokumentasi dalam ukuran penuh.
               </p>
             </div>
 
@@ -135,6 +153,97 @@
                   :key="i"
                   class="text-gray-600 dark:text-gray-400 leading-relaxed"
                 >{{ para }}</p>
+              </div>
+            </div>
+
+            <!-- Delivery Workflow -->
+            <div v-if="project.workflow?.length">
+              <div class="mb-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600 dark:text-primary-400 mb-1">How it works</p>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Workflow AI & Project Management</h2>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                  Setiap request memiliki jejak yang jelas dari requirement hingga dokumentasi akhir.
+                </p>
+              </div>
+              <div class="relative space-y-4 before:absolute before:left-6 before:top-8 before:bottom-8 before:w-px before:bg-gradient-to-b before:from-primary-500 before:to-violet-500">
+                <div
+                  v-for="item in project.workflow"
+                  :key="item.step"
+                  class="relative flex gap-4 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 shadow-sm"
+                >
+                  <div class="relative z-10 w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-violet-600 text-white flex items-center justify-center font-bold text-sm shadow-lg shadow-primary-500/20 flex-shrink-0">
+                    {{ item.step }}
+                  </div>
+                  <div class="min-w-0">
+                    <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                      <h3 class="font-semibold text-gray-900 dark:text-white">{{ item.title }}</h3>
+                      <span class="badge bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-300 text-[11px]">{{ item.tool }}</span>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{ item.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Progress Report -->
+            <div v-if="project.progress_report?.length" class="rounded-3xl bg-gray-950 dark:bg-black p-6 md:p-8 text-white overflow-hidden relative">
+              <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-600/20 rounded-full blur-3xl" />
+              <div class="relative">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary-300 mb-1">Live overview</p>
+                    <h2 class="text-xl font-bold">Laporan Progress Proyek</h2>
+                  </div>
+                  <span class="inline-flex items-center gap-2 text-xs text-emerald-300">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    Diperbarui setiap task passed
+                  </span>
+                </div>
+                <div class="space-y-5">
+                  <div v-for="phase in project.progress_report" :key="phase.phase">
+                    <div class="flex items-center justify-between gap-3 mb-2">
+                      <div>
+                        <p class="text-sm font-medium">{{ phase.phase }}</p>
+                        <p class="text-xs text-gray-400 mt-0.5">{{ phase.summary }}</p>
+                      </div>
+                      <div class="text-right flex-shrink-0">
+                        <p class="text-sm font-bold">{{ phase.progress }}%</p>
+                        <p class="text-[10px] text-gray-400">{{ phase.status }}</p>
+                      </div>
+                    </div>
+                    <div class="h-2 rounded-full bg-white/10 overflow-hidden">
+                      <div
+                        class="h-full rounded-full bg-gradient-to-r from-primary-400 via-violet-400 to-fuchsia-400 transition-all duration-700"
+                        :style="{ width: `${phase.progress}%` }"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Documentation Deliverables -->
+            <div v-if="project.documentation?.length">
+              <div class="mb-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600 dark:text-primary-400 mb-1">Knowledge base</p>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Dokumentasi yang Diserahkan</h2>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <article
+                  v-for="(doc, i) in project.documentation"
+                  :key="doc.title"
+                  class="group rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-lg transition-all"
+                >
+                  <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-primary-50 dark:bg-primary-950 text-primary-600 dark:text-primary-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <fa :icon="documentationIcons[i % documentationIcons.length]" />
+                    </div>
+                    <div>
+                      <h3 class="font-semibold text-gray-900 dark:text-white mb-1.5">{{ doc.title }}</h3>
+                      <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{{ doc.description }}</p>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
 
@@ -305,15 +414,16 @@
             <fa icon="fa-solid fa-chevron-left" />
           </button>
           <!-- Image Display -->
-          <div class="max-w-3xl w-full">
-            <div
-              class="aspect-video rounded-2xl flex items-center justify-center"
-              :class="getGradient(project.id)"
-            >
-              <fa icon="fa-solid fa-image" class="text-8xl text-white/20" />
+          <div class="max-w-5xl w-full">
+            <div class="aspect-video rounded-2xl overflow-hidden bg-gray-900 border border-white/10 shadow-2xl">
+              <img
+                :src="allImages[lightboxIndex]"
+                :alt="`${project.title} — dokumentasi ${lightboxIndex + 1}`"
+                class="w-full h-full object-contain"
+              />
             </div>
             <p class="text-center text-white/50 text-xs mt-3">
-              {{ allImages[lightboxIndex] }} · {{ lightboxIndex + 1 }} / {{ allImages.length }}
+              Screenshot {{ lightboxIndex + 1 }} dari {{ allImages.length }}
             </p>
           </div>
           <!-- Next -->
@@ -364,6 +474,12 @@ const allImages = computed(() => {
 
 const lightboxOpen = ref(false)
 const lightboxIndex = ref(0)
+const documentationIcons = [
+  'fa-solid fa-list-check',
+  'fa-solid fa-code',
+  'fa-solid fa-shield-halved',
+  'fa-solid fa-chart-line',
+]
 
 onKeyStroke('Escape', () => { lightboxOpen.value = false })
 onKeyStroke('ArrowLeft', () => {
@@ -381,16 +497,7 @@ const gradients = [
   'from-sky-400 to-blue-600',
   'from-amber-400 to-orange-600',
 ]
-const gradientsLight = [
-  'from-primary-300 to-indigo-400',
-  'from-emerald-300 to-teal-400',
-  'from-orange-300 to-rose-400',
-  'from-violet-300 to-purple-400',
-  'from-sky-300 to-blue-400',
-  'from-amber-300 to-orange-400',
-]
 function getGradient(id: number) { return gradients[(id - 1) % gradients.length] }
-function getGradientLight(id: number) { return gradientsLight[(id - 1) % gradientsLight.length] }
 
 useSeoMeta({
   title: project.value ? `${project.value.title} - Portfolio ${profile.name}` : 'Proyek Tidak Ditemukan',
